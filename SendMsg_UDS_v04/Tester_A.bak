@@ -1,0 +1,1822 @@
+/*@@var:*/
+variables
+{
+/*--------------- variables for Tester ----------------------*/
+    mstimer Timer0;
+    word ms1_counter = 0;
+    
+    message 0x660   ECU_Response_Msg;
+    message 0x760   Tester_Request_Msg;
+    message 0x7FF   Tester_Fun_Req_Msg;
+    
+    enum SESSION_MODE{DEAAULT_MODE=0, EXTEND_MODE, PROGRAM_MODE}; //diagnose session mode
+    byte session_mode=DEAAULT_MODE;
+    
+    enum CAN_TX_STEP{TX_PDU_READY=0, TX_FF, RX_FLOW_CONTROL, TX_CF, TX_PDU_OVER};
+    byte Tester_TX_step = TX_PDU_READY;
+    
+    enum CAN_RX_STEP{RX_PDU_READY=0, RX_FF, TX_FLOW_CONTROL, RX_CF, RX_PDU_OVER};
+    byte Tester_RX_step = RX_PDU_READY;
+    
+    byte TX_buffer[256];
+    char TX_display_buff[900];
+    byte temp_buff[256];
+    struct multi_frame
+    {
+         byte single_buff[8];
+         byte FF_buff[8];
+         byte flow_control[8];
+         byte CF_buff[35][8];  //max data = 6+7*35 = 251-->lengh+251byte = 252byte     
+     }PDU1,PDU2;
+    
+    byte mouse_filter_time;
+    byte Tester_request_flag = 0;
+    byte STmin_count1;        //STmin (receive FF from ECU and then transmit FC msg to ECU) 
+    byte RX_PDU2_timeout,TX_PDU1_timeout;
+    byte RX_flow_flag=0,CF_count,CF_count1,CF_BS_value=0,RX_STmin_value,RX_STmin_count;
+    
+    // --------------  Tester receive PDU2 ----------------------// 
+    char RX_display_buff[900];
+    byte RX_buff[300];
+    byte Tester_RX_flag,Tester_RX_length,Tester_CF_count,Tester_RX_total_length,Tester_RX_total_CF,CF_count2;
+    
+    
+    // --------------  file read & write ------------------------//
+    dword glbHandle = 0;
+    
+    // --------------- security key -----------------------------//
+    byte GetLevelOnekey[4];
+    byte TesterPresent_flag  = 0;
+    int vseed[4]={0x00,0x00,0x00,0x01};            //default value
+
+    dword SA_App_Mask = 0x9DA5C47F;      //use for CAP1321   
+
+    byte sendMsg_dlc;
+
+    /* use for CAP133x SecurityAlgorithm */
+    word m_AppliKey = 0xD033;
+
+}
+/*@@end*/
+
+/*@@preStart:PreStart:*/
+on preStart
+{
+    write ("welcome! Tester is ready!");
+}
+/*@@end*/
+
+/*@@startStart:Start:*/
+on start
+{
+    glbHandle = OpenFileRead ("Diag_command.txt",0);				// Opens the file in ASCII mode for read access.
+
+    if(glbHandle != 0)
+    {
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data01, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data02, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data03, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data04, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data05, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data06, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data07, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data08, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data09, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data10, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data11, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data12, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data13, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data14, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data15, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data16, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data17, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data18, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data19, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data20, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data21, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data22, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data23, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data24, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data25, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data26, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data27, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data28, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data29, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data30, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data31, RX_display_buff);
+
+        fileGetStringSZ(RX_display_buff,elcount(RX_display_buff),glbHandle);
+        putvalue(Tester_Req_Data32, RX_display_buff);
+
+
+        fileClose (glbHandle);
+
+    }
+    else
+    {
+        write ("File 'Diag_command.txt' was not opened for read access.");
+    }
+
+    TesterPresent_flag = 0;
+    settimer(Timer0,50);
+}
+/*@@end*/
+
+/*@@stop:StopMeasurement:*/
+on stopMeasurement
+{
+    glbHandle = OpenFileWrite ("Diag_command.txt",0);
+
+    if (glbHandle != 0)
+    {
+        getvalue(Tester_Req_Data01,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data02,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data03,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data04,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data05,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data06,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data07,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data08,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data09,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data10,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data11,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data12,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data13,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data14,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data15,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data16,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data17,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data18,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data19,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data20,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data21,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data22,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data23,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data24,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data25,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data26,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data27,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data28,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data29,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data30,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data31,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+        getvalue(Tester_Req_Data32,RX_display_buff);
+        strncat(RX_display_buff, "\n", 900);  
+        filePutString(RX_display_buff, elcount(RX_display_buff), glbHandle);
+
+
+        fileClose (glbHandle);
+
+    }
+    else
+    {
+        write ("File 'Diag_command.txt' was not opened for write access.");
+    }
+
+}
+/*@@end*/
+
+/*@@timer:Timer0:*/
+on timer Timer0
+{
+    ms1_counter++;
+    
+    Tester_send_PDU1();
+
+    Tester_receive_PDU2();
+
+    if((ms1_counter%4000)==0) 
+    {   
+        if((Tester_TX_step==TX_PDU_READY)&&(Tester_RX_step==RX_PDU_READY)&&(TesterPresent_flag==1))
+        {
+            Tester_Request_Msg.DLC = 0x03;
+            Tester_Request_Msg.byte(0) = 0x02;
+            Tester_Request_Msg.byte(1) = 0x3E;
+            Tester_Request_Msg.byte(2) = 0x00;
+            Tester_Request_Msg.byte(3) = 0x00;
+            Tester_Request_Msg.byte(4) = 0x00;
+            Tester_Request_Msg.byte(5) = 0x00;
+            Tester_Request_Msg.byte(6) = 0x00;
+            Tester_Request_Msg.byte(7) = 0x00;
+            output(Tester_Request_Msg);
+        }
+    }
+
+    if(RX_STmin_count) RX_STmin_count--;
+    if(STmin_count1)   STmin_count1--;
+    if(TX_PDU1_timeout) TX_PDU1_timeout--;
+    if(RX_PDU2_timeout) RX_PDU2_timeout--;
+    if(mouse_filter_time) mouse_filter_time--;
+
+    settimer(Timer0, 1);
+
+}
+/*@@end*/
+
+/*@@msg:CAN1.CAN_tester::ECU_ResponseMsg (0x660):*/
+on message ECU_ResponseMsg
+{
+    byte i;
+
+    if ((this.byte(0)&0xF0) == 0x00)        //single frame
+    {
+        for(i = 0; i < 8; i++)
+        {
+            PDU2.single_buff[i] = this.byte(i);
+        }
+
+        // receive security seed
+        if ((this.byte(1) == 0x67) && ((this.byte(2) == 0x01) || (this.byte(2) == 0x03)))
+        {
+            for(i = 0; i < 4; i++)
+            {
+                vseed[i]=this.byte(i+3);
+            }
+        }
+        Tester_RX_flag = 0x0F;
+    }
+    else if((this.byte(0)&0xF0) == 0x10)    //first frame
+    {
+        Tester_RX_total_length = this.byte(1);
+        //write("Tester_RX_total_length = %d",Tester_RX_total_length);
+
+        Tester_RX_total_CF = (Tester_RX_total_length-6)/7;
+        if((Tester_RX_total_length-6)%7) Tester_RX_total_CF++;
+
+        CF_count2 = 0;
+
+        for(i=0;i<8;i++) 
+        {
+            PDU2.FF_buff[i] = this.byte(i);
+        }
+        Tester_RX_flag = 0x1F;
+    }
+    else if((this.byte(0)&0xF0) == 0x20)    //CF frame
+    {
+        for(i=0;i<8;i++)
+        {
+            PDU2.CF_buff[ CF_count2 ][i] = this.byte(i);
+        }
+        CF_count2++;
+        Tester_RX_flag = 0x2F;
+    }
+    else if((this.byte(0)&0xF0) == 0x30)     //Flow Control from ECU
+    {
+        //get FS,BS,STmin
+        CF_BS_value = this.byte(1);
+        RX_STmin_value = this.byte(2);
+        RX_STmin_count = RX_STmin_value;
+        RX_flow_flag = 1;
+    }
+
+
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag01:*/
+on envVar Tester_Req_Flag01
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag01);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data01, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@caplFunc:send_data_check():*///function
+int send_data_check(void)
+{
+    byte i=0,j=0;
+    byte TX_length=0;
+    byte high_num,low_num;
+      
+    //checking...
+    TX_length = strlen(TX_display_buff);
+    write("string %d",TX_length);           //debug used
+        
+    if(mouse_filter_time)  
+    {
+        return(0); 
+    }
+    mouse_filter_time = 100;                //100ms filter
+
+
+    if(TX_length<5)  
+    {
+        write("data format is error!");
+        return(0);
+    } 
+	 
+ 	for(i=2;i<TX_length;i=i+3)             //check "space"
+	{
+		if(TX_display_buff[i]!=' ') 
+		{
+		   //write("data format is error!");
+		   return(0);
+		}
+	 }
+
+    //////////////////////////////////////////////////// 
+    for(i=0;i<TX_length;i++)
+    {
+        if(TX_display_buff[i]!=' ') 
+        {
+            if((TX_display_buff[i]>64) && (TX_display_buff[i]<71) )       continue; //A - F 
+            else if((TX_display_buff[i]>96) && (TX_display_buff[i]<103) ) continue; //a - f
+            else if((TX_display_buff[i]>47) && (TX_display_buff[i]<58) )  continue; //0 - 9 
+            else
+            {
+                write("data format is error! char error");
+                return(0);	
+            }
+        } 	 
+    }
+    //////////////////////////////////////////////////// 
+    j = 0;
+    for(i=0;i<TX_length;i=i+3)
+    {   
+        if((TX_display_buff[i]>64) && (TX_display_buff[i]<71))
+        {
+            high_num = TX_display_buff[i]-'A'+10;
+        }
+        else if((TX_display_buff[i]>96) && (TX_display_buff[i]<103))
+        {
+            high_num = TX_display_buff[i]-'a'+10;
+        }
+        else if((TX_display_buff[i]>47) && (TX_display_buff[i]<58))
+        {
+            high_num = TX_display_buff[i]-'0';
+        } 
+
+        if((TX_display_buff[i+1]>64) && (TX_display_buff[i+1]<71) )
+        {
+            low_num = TX_display_buff[i+1]-'A'+10;
+        }
+        else if((TX_display_buff[i+1]>96) && (TX_display_buff[i+1]<103))
+        {
+            low_num = TX_display_buff[i+1]-'a'+10;
+        }
+        else if((TX_display_buff[i+1]>47) && (TX_display_buff[i+1]<58))
+        {
+            low_num = TX_display_buff[i+1]-'0';
+        }
+
+        temp_buff[j++] = high_num * 16 + low_num;
+    }
+    
+    TX_length = j;
+
+    for(i=0;i<255;i++) 
+    {
+        TX_buffer[i] = 0x00;
+    }
+
+    for(i=0;i<TX_length;i++)
+    {
+        TX_buffer[i+1] = temp_buff[i];
+    }
+    TX_buffer[0] = TX_length;
+
+    /* security key */  
+    if((TX_buffer[1]==0x27) && ((TX_buffer[2]==0x02) || (TX_buffer[2]==0x04)))
+    {
+        get_security_key();
+        TX_buffer[3] = GetLevelOnekey[0];
+        TX_buffer[4] = GetLevelOnekey[1];
+        TX_buffer[5] = GetLevelOnekey[2];
+        TX_buffer[6] = GetLevelOnekey[3];
+        TX_buffer[0] = TX_buffer[0]+4;
+        TX_length = TX_length+4;
+
+        GetLevelOnekey[0] = 0;
+        GetLevelOnekey[1] = 0;
+        GetLevelOnekey[2] = 0;
+        GetLevelOnekey[3] = 0;
+    }
+    
+    
+    if(TX_buffer[1]==0x10)
+    {
+        if((TX_buffer[2]==0x02) || (TX_buffer[2]==0x03))
+        {
+            TesterPresent_flag = 1;
+        }
+        
+        if(TX_buffer[2]==0x01)
+        {
+            TesterPresent_flag =0;
+        }
+    }
+
+    write("TX_length = %d",TX_length);
+    return(1);
+
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag02:*/
+on envVar Tester_Req_Flag02
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag02);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data02, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@caplFunc:get_security_key():*///function
+void get_security_key(void)
+{
+    //use for CAP1321 project
+    //CAP1321_SecurityAlgorithm();
+
+    //use for CAP133X project
+    CAP133x_SecurityAlgorithm();
+
+}
+/*@@end*/
+
+/*@@caplFunc:Tester_receive_PDU2():*///function
+void Tester_receive_PDU2(void)
+{
+    byte temp, i, a;
+    word j;
+
+    switch (Tester_RX_step)
+    {
+        case RX_PDU_READY:
+            if(Tester_RX_flag)
+            {
+                Tester_RX_step = RX_FF;
+            }
+        break;
+        
+        case RX_FF:
+            if(Tester_RX_flag==0x0F)        //single frame
+            {
+                Tester_RX_flag = 0;
+                Tester_RX_step = RX_PDU_OVER;
+            }
+            else if(Tester_RX_flag==0x1F)   //First Frame
+            {
+                Tester_RX_flag = 0;
+                Tester_RX_length = 0 + 6;
+                Tester_RX_step = TX_FLOW_CONTROL;
+                STmin_count1 = 10;          //after 10 ms send flow-control
+            }
+            else //error frame
+            {
+                for(i=0;i<8;i++) {PDU2.FF_buff[i]=0; PDU2.single_buff[i]=0;} //clear buff
+                for(j=0;j<35;j++)
+                for(i=0;i<8;i++)  PDU2.CF_buff[j][i]=0;
+                for(j=0;j<300;j++)  RX_buff[j]=0;
+                for(j=0;j<900;j++)  RX_display_buff[j]=0;
+
+                Tester_RX_step = RX_PDU_READY;
+                Tester_RX_length = 0;
+                Tester_RX_flag = 0;
+                Tester_RX_total_length = 0;
+                Tester_RX_total_CF = 0;
+            }            
+        break;
+
+        case TX_FLOW_CONTROL:
+            if(STmin_count1 == 0)
+            {
+                Tester_Request_Msg.DLC = 3;
+                Tester_Request_Msg.byte(0) = 0x30;
+                Tester_Request_Msg.byte(1) = 0x00;
+                Tester_Request_Msg.byte(2) = 10;   //10ms
+                Tester_Request_Msg.byte(3) = 0;
+                Tester_Request_Msg.byte(4) = 0;
+                Tester_Request_Msg.byte(5) = 0;
+                Tester_Request_Msg.byte(6) = 0;
+                Tester_Request_Msg.byte(7) = 0;
+                Tester_RX_flag = 0;//if other frame
+                output(Tester_Request_Msg);
+                Tester_CF_count = 10;
+                Tester_RX_step = RX_CF;
+                RX_PDU2_timeout = 100;
+            }            
+        break;
+
+        case RX_CF:
+            if(RX_PDU2_timeout)
+            {
+                if(Tester_RX_flag == 0x2F)  //receive one CF
+                {
+                    Tester_RX_flag = 0;
+                    Tester_RX_length = Tester_RX_length + 7;
+                    Tester_CF_count--;
+                    if(Tester_RX_length >= Tester_RX_total_length)
+                    {
+                        Tester_RX_step = RX_PDU_OVER;
+                    }
+                    else if(Tester_CF_count==0)
+                    {
+                        Tester_RX_step = TX_FLOW_CONTROL; //go on
+                    } 
+                    else
+                    {
+                        RX_PDU2_timeout = 100;
+                    } 
+                }
+            }
+            else//timeout
+            {
+                for(i=0;i<8;i++) {PDU2.FF_buff[i]=0; PDU2.single_buff[i]=0;} //clear buff
+                for(j=0;j<35;j++)
+                for(i=0;i<8;i++)  PDU2.CF_buff[j][i]=0;
+                for(j=0;j<300;j++)  RX_buff[j]=0;
+                for(j=0;j<900;j++)  RX_display_buff[j]=0;
+
+                Tester_RX_step = RX_PDU_READY;
+                Tester_RX_length = 0;
+                Tester_RX_flag = 0;
+                Tester_RX_total_length = 0;
+                Tester_RX_total_CF = 0;
+                write("RX PDU2 CF time-out !");
+            }             
+        break;
+
+        case RX_PDU_OVER:
+            if(PDU2.single_buff[0])  
+            {
+                for(i=0;i<8;i++)    
+                {
+                    temp = PDU2.single_buff[i];
+                    
+                    a = temp>>4;
+                    if( a>9 ) a = a+'A'-10;
+                    else      a = a+'0';
+                    RX_display_buff[3*i] = a;
+                    
+                    a = temp & 0x0F;
+                    if( a>9 ) a = a+'A'-10;
+                    else      a = a+'0'; 
+                    RX_display_buff[3*i+1] = a;
+                    
+                    RX_display_buff[3*i+2] = 0x20;
+                }
+            }
+            else
+            {
+                for(i=0;i<8;i++) RX_buff[i] = PDU2.FF_buff[i];
+                
+                for(j=0;j<Tester_RX_total_CF;j++)
+                {
+                    for(i=0;i<8;i++) 
+                    {
+                        RX_buff[8*(j+1)+i] = PDU2.CF_buff[j][i];
+                    }
+
+                }
+                
+                //for(i=0;i<20;i++) write("%x",RX_buff[i]);
+                
+                for(i=0;i<Tester_RX_total_length;i++) 
+                {
+                    temp = RX_buff[i];
+                    a = temp>>4; 
+                    if( a>9 ) a = a+'A'-10;
+                    else      a = a+'0';
+                    RX_display_buff[3*i] = a;
+                    
+                    a = temp & 0x0F;
+                    if( a>9 ) a = a+'A'-10;
+                    else      a = a+'0';
+                    RX_display_buff[3*i+1] = a;
+                                        
+                    RX_display_buff[3*i+2] = 0x20;
+                }
+            }
+            //write("Tester receive response = %x",RX_buff);
+            write("Tester receive response = %s",RX_display_buff);            
+            
+            for(i=0;i<8;i++) {PDU2.FF_buff[i]=0; PDU2.single_buff[i]=0;} //clear buff
+            for(j=0;j<35;j++)
+            for(i=0;i<8;i++)  PDU2.CF_buff[j][i]=0;
+            for(j=0;j<300;j++)  RX_buff[j]=0;
+            for(j=0;j<900;j++)  RX_display_buff[j]=0;
+            
+            Tester_RX_step = RX_PDU_READY;
+            Tester_RX_length = 0;
+            Tester_RX_flag = 0;
+            Tester_RX_total_length = 0;
+            Tester_RX_total_CF = 0;
+        break;
+        
+        default:
+            Tester_RX_step = RX_PDU_READY;
+            for(i=0;i<8;i++) {PDU2.FF_buff[i]=0; PDU2.single_buff[i]=0;} //clear buff
+            for(j=0;j<35;j++)
+            for(i=0;i<8;i++)  PDU2.CF_buff[j][i]=0;
+            for(j=0;j<300;j++)  RX_buff[j]=0;
+            for(j=0;j<900;j++)  RX_display_buff[j]=0;
+            
+            Tester_RX_length = 0;
+            Tester_RX_flag = 0;
+            Tester_RX_total_length = 0;
+            Tester_RX_total_CF = 0;
+        break;
+    }
+}
+/*@@end*/
+
+/*@@caplFunc:Tester_send_PDU1():*///function
+void Tester_send_PDU1(void)
+{
+    byte i,length;
+
+    switch(Tester_TX_step)
+    {
+        case TX_PDU_READY:
+            if(Tester_request_flag)
+            {
+                Tester_request_flag = 0;
+                
+                if((TX_buffer[0]>0) && (TX_buffer[0]<8)) //single frame 
+                {
+                    PDU1.single_buff[0] = TX_buffer[0];
+                    for(i=0;i<7;i++) PDU1.single_buff[i+1] = TX_buffer[i+1];
+                    Tester_TX_step = TX_FF;
+                }
+                else if(TX_buffer[0]>7)  //multi frame
+                {
+                    length = TX_buffer[0];
+                    PDU1.FF_buff[0] = 0x10;
+                    PDU1.FF_buff[1] = TX_buffer[0];
+                    for(i=0;i<6;i++) PDU1.FF_buff[2+i] = TX_buffer[1+i]; //FF
+                    length = length-6;
+                    
+                    CF_count = 0;
+                    CF_count1 = 0;
+                    while( length )
+                    {
+                        if(CF_count<0x0F)  PDU1.CF_buff[CF_count][0] = 0x20|((CF_count+1)&0x0F);
+                        else               PDU1.CF_buff[CF_count][0] = 0x20 | (CF_count&0x0F);
+                        
+                        for(i=0;i<7;i++) PDU1.CF_buff[CF_count][1+i] = TX_buffer[6+7*CF_count+1+i];
+                        
+                        CF_count++;
+                        if(length>7) 
+                        {
+                            length = length-7;
+                        }
+                        else 
+                        {
+                            sendMsg_dlc = length+1;
+                            length =0;                            
+                        }
+                    }
+                    
+                    Tester_TX_step = TX_FF;
+                }
+                
+                for(i=0;i<255;i++) TX_buffer[i] = 0;//clear buffer
+            }
+        break;
+        
+        case TX_FF:
+            if(PDU1.single_buff[0]>0)
+            {
+                for(i=0;i<8;i++)  Tester_Request_Msg.Byte(i) = PDU1.single_buff[i];
+                
+                Tester_Request_Msg.DLC = Tester_Request_Msg.Byte(0) + 1;
+                output(Tester_Request_Msg);
+                
+                Tester_TX_step = TX_PDU_OVER; 
+                
+            }
+            else
+            {
+                for(i=0;i<8;i++) Tester_Request_Msg.Byte(i) = PDU1.FF_buff[i]; 
+                
+                Tester_Request_Msg.DLC = 8;
+                output(Tester_Request_Msg);
+                Tester_TX_step = RX_FLOW_CONTROL; 
+                TX_PDU1_timeout =50;
+            }
+            
+            //write("Tester send first frame!");
+        break;
+        
+        case RX_FLOW_CONTROL:
+            if(TX_PDU1_timeout)
+            {
+                if(RX_flow_flag)
+                {
+                    RX_flow_flag = 0;
+                    //get FS,BS,STmin
+                    //write("Tester received flow control!");
+                    Tester_TX_step = TX_CF; 
+                }
+            }
+            else
+            {
+                Tester_TX_step = TX_PDU_OVER; 
+            }
+        break;
+        
+        case TX_CF:
+            if(RX_STmin_count==0)
+            {
+                RX_STmin_count = RX_STmin_value;
+                
+                if(CF_BS_value == 0)
+                {
+                    if(CF_count1 < CF_count)
+                    {
+                        for(i=0;i<8;i++) Tester_Request_Msg.Byte(i) = PDU1.CF_buff[ CF_count1 ][i];
+                        
+                        if(CF_count1 < CF_count-1)
+                        {
+                            Tester_Request_Msg.DLC = 8;
+                        }
+                        else
+                        {
+                            Tester_Request_Msg.DLC = sendMsg_dlc;
+                            sendMsg_dlc = 0;
+                        }
+                        output(Tester_Request_Msg);
+                        CF_count1++;
+                        //write("Tester send continue frame!");
+                    }
+
+                    if(CF_count1 >= CF_count)  Tester_TX_step = TX_PDU_OVER;
+                }
+                else
+                {
+                    if(CF_BS_value--)
+                    {
+                        if(CF_count1 < CF_count)
+                        {
+                            for(i=0;i<8;i++) Tester_Request_Msg.Byte(i) = PDU1.CF_buff[ CF_count1 ][i];
+
+                            if(CF_count1 < CF_count-1)
+                            {
+                                Tester_Request_Msg.DLC = 8;
+                            }
+                            else
+                            {
+                                Tester_Request_Msg.DLC = sendMsg_dlc;
+                                sendMsg_dlc = 0;
+                            }
+                            output(Tester_Request_Msg);
+                            CF_count1++;
+                            //write("Tester send continue frame!");
+                        }
+                    }
+                
+                    if(CF_count1 >= CF_count)  Tester_TX_step = TX_PDU_OVER;
+                    else if(CF_BS_value == 0 ) Tester_TX_step = RX_FLOW_CONTROL;
+                }
+            }
+        break;
+        
+        case TX_PDU_OVER:
+            //write("TX_PDU_OVER!");
+            for(i=0;i<8;i++) //clear buff 
+            {
+                PDU1.single_buff[i] = 0;
+                PDU1.FF_buff[i] = 0;
+                PDU1.flow_control[i] = 0;
+            }
+            RX_flow_flag = 0;
+            Tester_TX_step = TX_PDU_READY;
+        break;
+
+        default:
+            for(i=0;i<8;i++) //clear buff 
+            {
+                PDU1.single_buff[i] = 0;
+                PDU1.FF_buff[i] = 0;
+                PDU1.flow_control[i] = 0;
+            }
+            RX_flow_flag = 0;
+            Tester_TX_step = TX_PDU_READY;
+        break;
+    }
+    
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag16:*/
+on envVar Tester_Req_Flag16
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag16);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data16, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag03:*/
+on envVar Tester_Req_Flag03
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag03);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data03, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag04:*/
+on envVar Tester_Req_Flag04
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag04);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data04, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag05:*/
+on envVar Tester_Req_Flag05
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag05);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data05, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag06:*/
+on envVar Tester_Req_Flag06
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag06);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data06, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag07:*/
+on envVar Tester_Req_Flag07
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag07);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data07, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag08:*/
+on envVar Tester_Req_Flag08
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag08);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data08, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag09:*/
+on envVar Tester_Req_Flag09
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag09);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data09, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag10:*/
+on envVar Tester_Req_Flag10
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag10);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data10, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag11:*/
+on envVar Tester_Req_Flag11
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag11);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data11, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag12:*/
+on envVar Tester_Req_Flag12
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag12);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data12, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag13:*/
+on envVar Tester_Req_Flag13
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag13);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data13, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag14:*/
+on envVar Tester_Req_Flag14
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag14);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data14, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag15:*/
+on envVar Tester_Req_Flag15
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag15);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data15, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@caplFunc:CAP1321_SecurityAlgorithm():*///function
+////////////////////////////////////////////////////////////////////////
+//s
+//    Security Algorithm for ApplicationSW MASK=0x9DA5C47F
+//    UWord32 SeedToKey (UWord32 seed, UWord32 MASK)
+////////////////////////////////////////////////////////////////////////
+void CAP1321_SecurityAlgorithm(void)
+{
+    dword temp_seed,temp_key;
+    byte i=0;
+    
+    temp_seed = (dword)vseed[0];
+    temp_seed <<= 8;
+    temp_seed = temp_seed + vseed[1];
+    temp_seed <<= 8;
+    temp_seed = temp_seed + vseed[2];
+    temp_seed <<= 8;
+    temp_seed = temp_seed + vseed[3];
+
+    if (temp_seed != 0)
+    {
+        for(i=0; i<35; i++)
+        {
+            if (temp_seed & 0x80000000)
+            {
+                temp_seed = temp_seed<<1;
+                temp_seed = temp_seed^SA_App_Mask;
+            }
+            else
+            {
+                temp_seed = temp_seed<<1;
+            }
+        }
+        
+        temp_key = temp_seed;
+    }
+    
+    GetLevelOnekey[0] = (byte)(temp_key>>24);
+    GetLevelOnekey[1] = (byte)(temp_key>>16);
+    GetLevelOnekey[2] = (byte)(temp_key>>8);
+    GetLevelOnekey[3] = (byte)(temp_key);
+}
+/*@@end*/
+
+/*@@caplFunc:CAP133x_SecurityAlgorithm():*///function
+void CAP133x_SecurityAlgorithm(void)
+{
+    dword temp_key;
+    int tempdata1;
+    int tempdata2;
+    int swKey12;
+    int swKey34;
+    int swE1, swE2, swE3, swE4;
+
+    swE1 = (int)m_AppliKey;    
+    swE2 = (int)((word)(vseed[0] << 8) + (word)(vseed[3]));
+
+    tempdata1 = psSecurityFunc1(swE1);
+    tempdata2 = psSecurityFunc2(swE2);
+    swKey12 = tempdata1 | tempdata2;
+
+    swE3 = (int)((word)(vseed[1] << 8) + (word)(vseed[2]));
+    swE4 = swKey12;
+
+    tempdata1 = psSecurityFunc1(swE3);
+    tempdata2 = psSecurityFunc2(swE4);
+    swKey34 = tempdata1 | tempdata2;
+
+    temp_key = (dword)((dword)(swKey12 << 16) + (dword)(swKey34));
+
+    GetLevelOnekey[0] = (byte)(temp_key>>24);
+    GetLevelOnekey[1] = (byte)(temp_key>>16);
+    GetLevelOnekey[2] = (byte)(temp_key>>8);
+    GetLevelOnekey[3] = (byte)(temp_key);
+}
+/*@@end*/
+
+/*@@caplFunc:psSecurityFunc1(int):*///function
+int psSecurityFunc1 (int E1_data)
+{
+	int R_data = 0;
+	int K_data = 0;
+	int NI_data = 0;
+	
+	K_data = E1_data/178;
+	R_data = E1_data - K_data*178;
+    NI_data = R_data*170 - K_data*63;
+
+	if(NI_data < 0)
+	{
+		NI_data += 30323;
+	}
+
+    return(NI_data);
+}
+/*@@end*/
+
+/*@@caplFunc:psSecurityFunc2(int):*///function
+int psSecurityFunc2 (int E2_data)
+{
+	int R_data = 0;
+	int K_data = 0;
+	int NY_data = 0;
+
+	K_data = E2_data/177;
+	R_data = E2_data - K_data*177;
+    NY_data = R_data*171 - K_data*2;
+	
+    if(NY_data < 0)
+	{
+		NY_data += 30269;
+	}
+	
+	return(NY_data);
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag17:*/
+on envVar Tester_Req_Flag17
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag17);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data17, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag18:*/
+on envVar Tester_Req_Flag18
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag18);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data18, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag19:*/
+on envVar Tester_Req_Flag19
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag19);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data19, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag20:*/
+on envVar Tester_Req_Flag20
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag20);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data20, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag21:*/
+on envVar Tester_Req_Flag21
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag21);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data21, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag22:*/
+on envVar Tester_Req_Flag22
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag22);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data22, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag23:*/
+on envVar Tester_Req_Flag23
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag23);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data23, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag24:*/
+on envVar Tester_Req_Flag24
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag24);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data24, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag25:*/
+on envVar Tester_Req_Flag25
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag25);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data25, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag26:*/
+on envVar Tester_Req_Flag26
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag26);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data26, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag27:*/
+on envVar Tester_Req_Flag27
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag27);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data27, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag28:*/
+on envVar Tester_Req_Flag28
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag28);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data28, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag29:*/
+on envVar Tester_Req_Flag29
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag29);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data29, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag30:*/
+on envVar Tester_Req_Flag30
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag30);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data30, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag31:*/
+on envVar Tester_Req_Flag31
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag31);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data31, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Tester_Req_Flag32:*/
+on envVar Tester_Req_Flag32
+{
+    byte i=0;
+
+    i = getvalue(Tester_Req_Flag32);
+
+    if(i)
+    {
+        getvalue(Tester_Req_Data32, TX_display_buff);       //Tester_Req_Data01 --> TX_display_buff
+        write("Tester request = %s",TX_display_buff);
+
+        if(send_data_check()==1)
+        {
+            Tester_request_flag = 1;
+        }
+        else
+        {
+            write("Input data format is error or click too fast!");
+        }
+    }
+}
+/*@@end*/
+

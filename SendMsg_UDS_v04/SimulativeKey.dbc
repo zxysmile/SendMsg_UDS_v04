@@ -1,0 +1,275 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Sim_VCI_and_CSV Simulative_KeyBoard
+VAL_TABLE_ key_sts 1 "press" 0 "release" ;
+
+
+BO_ 162 VMF_DSGN: 6 Sim_VCI_and_CSV
+ SG_ CMPT_NAV_MENU_VMF : 0|8@1- (1,0) [-128|127] "" Vector__XXX
+ SG_ CMPT_VOL_VCI : 40|8@1- (1,0) [-128|127] "" Vector__XXX
+ SG_ OVF_VOL_INF_ET_VCI : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ OVF_VOL_SUP_ET_VCI : 33|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CDE_TEL_KML : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CDE_VOCALE_ET_VMF : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PSH_GH_ET_HDC : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MODE_ET_VMF : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MENU_ET_VMF : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESCAPE_ET_VMF : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VALID_ET_VMF : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ OVF_NAV_INF_ET_VMF : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ OVF_NAV_SUP_ET_VMF : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 543 SimVCI_CDE_RADIO: 3 Sim_VCI_and_CSV
+ SG_ CMPT_MOL_ET_HDC : 8|8@1- (1,0) [-128|127] "" Vector__XXX
+ SG_ SOURCE_HDC : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VALID_CDE_RADIO : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LIST_ET_HDC : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MODE_TELEPH_ET_HDC : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VOLUME_DWN_ET_HDC : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VOLUME_UP_ET_HDC : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ OVF_SCAN_DWN_ET_HDC : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ OVF_SCAN_UP_ET_HDC : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SEEK_DWN_ET_HDC : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SEEK_UP_ET_HDC : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 848 SimKB_ETC_MsgID: 8 Vector__XXX
+
+BO_ 290 SimKB_RAD_MsgID: 8 Simulative_KeyBoard
+ SG_ Signal_EK_EscSP : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_TuneDownSP : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_TuneUpSP : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_SeekDownSP : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_SeekUpSP : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_EnterSP : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_MenuSP : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_6SP : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_5SP : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_4SP : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_3SP : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_2SP : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_1SP : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_ListSP : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_BandSP : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_SourceSP : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_DarkSP : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_MusicSP : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_Vol_UpDown_SP : 48|8@1- (1,0) [-128|127] "" Vector__XXX
+ SG_ Signal_EK_EjectSP : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_MuteSP : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Signal_EK_ModeSP : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+
+
+
+EV_ Env_CSV_MenuSP: 0 [0|0] "" 0 1 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ Env_CSV_PhoneSP: 0 [0|1] "" 0 2 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_CSV_ListSP: 0 [0|1] "" 0 3 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_CSV_EscSP: 0 [0|1] "" 0 4 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_CSV_ModeSP: 0 [0|1] "" 0 5 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_CSV_MuteSP: 0 [0|1] "" 0 6 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_CSV_SourceSP: 0 [0|1] "" 0 7 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_VCI_MuteSP: 0 [0|1] "" 0 8 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_VCI_VolDownSP: 0 [0|1] "" 0 9 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_VCI_VolUpSP: 0 [0|1] "" 0 10 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_VCI_SeekDownSP: 0 [0|1] "" 0 11 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_VCI_SeekUpSP: 0 [0|1] "" 0 12 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_CSV_EnterSP: 0 [0|1] "" 0 13 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_VCI_SourceSP: 0 [0|1] "" 0 14 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_CSV_SEEK: 0 [0|255] "1" 0 15 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_CSV_SEEK_Display: 0 [0|255] "1" 0 16 DUMMY_NODE_VECTOR2  Simulative_KeyBoard;
+
+EV_ Env_VCI_SCAN_Display: 0 [0|255] "1" 0 17 DUMMY_NODE_VECTOR2  Simulative_KeyBoard;
+
+EV_ Env_VCI_SCAN: 0 [0|255] "1" 0 18 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_CSV_VOL_UP_Down_Display: 0 [0|255] "1" 0 19 DUMMY_NODE_VECTOR2  Simulative_KeyBoard;
+
+EV_ Env_CSV_VOL_UP_Down: 0 [0|255] "1" 0 20 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_CSV_PWR_ON_Display: 0 [0|1] "" 0 21 DUMMY_NODE_VECTOR2 Vector__XXX;
+
+EV_ Env_VCI_PWR_ON_Display: 0 [0|1] "" 0 22 DUMMY_NODE_VECTOR2 Vector__XXX;
+
+EV_ Env_CSV_PWR_ON: 0 [0|1] "" 0 23 DUMMY_NODE_VECTOR1  Simulative_KeyBoard;
+
+EV_ Env_VCI_PWR_ON: 0 [0|1] "" 0 24 DUMMY_NODE_VECTOR1  Simulative_KeyBoard;
+
+EV_ Env_KB_VOL_UP_Down_Display: 0 [0|255] "1" 0 25 DUMMY_NODE_VECTOR2  Simulative_KeyBoard;
+
+EV_ Env_KB_VOL_UP_Down: 0 [0|255] "1" 0 26 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_KB_PWR_ON_Display: 0 [0|1] "" 0 27 DUMMY_NODE_VECTOR2 Vector__XXX;
+
+EV_ Env_KB_PWR_ON: 0 [0|1] "" 0 28 DUMMY_NODE_VECTOR1  Simulative_KeyBoard;
+
+EV_ Env_EK_ListSP: 0 [0|1] "" 0 29 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_BandSP: 0 [0|1] "" 0 30 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_SourceSP: 0 [0|1] "" 0 31 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_DarkSP: 0 [0|1] "" 0 32 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_MusicSP: 0 [0|1] "" 0 33 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_VolDownSP: 0 [0|1] "" 0 34 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_VolUpSP: 0 [0|1] "" 0 35 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_EjectSP: 0 [0|1] "" 0 36 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_MuteSP: 0 [0|1] "" 0 37 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_ModeSP: 0 [0|1] "" 0 38 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_TuneDownSP: 0 [0|1] "" 0 39 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_TuneUpSP: 0 [0|1] "" 0 40 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_SeekDownSP: 0 [0|1] "" 0 41 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_SeekUpSP: 0 [0|1] "" 0 42 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_EnterSP: 0 [0|1] "" 0 43 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_MenuSP: 0 [0|1] "" 0 44 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_EscSP: 0 [0|1] "" 0 45 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_6SP: 0 [0|1] "" 0 46 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_5SP: 0 [0|1] "" 0 47 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_4SP: 0 [0|1] "" 0 48 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_3SP: 0 [0|1] "" 0 49 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_2SP: 0 [0|1] "" 0 50 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+EV_ Env_EK_1SP: 0 [0|1] "" 0 51 DUMMY_NODE_VECTOR3  Simulative_KeyBoard;
+
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BU_  "CANoeJitterMax" INT 0 0;
+BA_DEF_ BU_  "CANoeJitterMin" INT 0 0;
+BA_DEF_ BU_  "CANoeDrift" INT 0 0;
+BA_DEF_ BU_  "CANoeStartDelay" INT 0 0;
+BA_DEF_DEF_  "BusType" "";
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "CANoeJitterMax" 0;
+BA_DEF_DEF_  "CANoeJitterMin" 0;
+BA_DEF_DEF_  "CANoeDrift" 0;
+BA_DEF_DEF_  "CANoeStartDelay" 0;
+VAL_ 290 Signal_EK_EscSP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_TuneDownSP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_TuneUpSP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_SeekDownSP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_SeekUpSP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_EnterSP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_MenuSP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_6SP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_5SP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_4SP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_3SP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_2SP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_1SP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_ListSP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_BandSP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_SourceSP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_DarkSP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_MusicSP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_EjectSP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_MuteSP 1 "press" 0 "release" ;
+VAL_ 290 Signal_EK_ModeSP 1 "press" 0 "release" ;
+VAL_ Env_CSV_PhoneSP 1 "press" 0 "release" ;
+VAL_ Env_CSV_ListSP 1 "press" 0 "release" ;
+VAL_ Env_CSV_EscSP 1 "press" 0 "release" ;
+VAL_ Env_CSV_ModeSP 1 "press" 0 "release" ;
+VAL_ Env_CSV_MuteSP 1 "press" 0 "release" ;
+VAL_ Env_CSV_SourceSP 1 "press" 0 "release" ;
+VAL_ Env_VCI_MuteSP 1 "press" 0 "release" ;
+VAL_ Env_VCI_VolDownSP 1 "press" 0 "release" ;
+VAL_ Env_VCI_VolUpSP 1 "press" 0 "release" ;
+VAL_ Env_VCI_SeekDownSP 1 "press" 0 "release" ;
+VAL_ Env_VCI_SeekUpSP 1 "press" 0 "release" ;
+VAL_ Env_CSV_EnterSP 1 "press" 0 "release" ;
+VAL_ Env_VCI_SourceSP 1 "press" 0 "release" ;
+VAL_ Env_CSV_PWR_ON_Display 1 "press" 0 "release" ;
+VAL_ Env_VCI_PWR_ON_Display 1 "press" 0 "release" ;
+VAL_ Env_CSV_PWR_ON 1 "press" 0 "release" ;
+VAL_ Env_VCI_PWR_ON 1 "press" 0 "release" ;
+VAL_ Env_KB_PWR_ON_Display 1 "press" 0 "release" ;
+VAL_ Env_KB_PWR_ON 1 "press" 0 "release" ;
+VAL_ Env_EK_ListSP 1 "press" 0 "release" ;
+VAL_ Env_EK_BandSP 1 "press" 0 "release" ;
+VAL_ Env_EK_SourceSP 1 "press" 0 "release" ;
+VAL_ Env_EK_DarkSP 1 "press" 0 "release" ;
+VAL_ Env_EK_MusicSP 1 "press" 0 "release" ;
+VAL_ Env_EK_VolDownSP 1 "press" 0 "release" ;
+VAL_ Env_EK_VolUpSP 1 "press" 0 "release" ;
+VAL_ Env_EK_EjectSP 1 "press" 0 "release" ;
+VAL_ Env_EK_MuteSP 1 "press" 0 "release" ;
+VAL_ Env_EK_ModeSP 1 "press" 0 "release" ;
+VAL_ Env_EK_TuneDownSP 1 "press" 0 "release" ;
+VAL_ Env_EK_TuneUpSP 1 "press" 0 "release" ;
+VAL_ Env_EK_SeekDownSP 1 "press" 0 "release" ;
+VAL_ Env_EK_SeekUpSP 1 "press" 0 "release" ;
+VAL_ Env_EK_EnterSP 1 "press" 0 "release" ;
+VAL_ Env_EK_MenuSP 1 "press" 0 "release" ;
+VAL_ Env_EK_EscSP 1 "press" 0 "release" ;
+VAL_ Env_EK_6SP 1 "press" 0 "release" ;
+VAL_ Env_EK_5SP 1 "press" 0 "release" ;
+VAL_ Env_EK_4SP 1 "press" 0 "release" ;
+VAL_ Env_EK_3SP 1 "press" 0 "release" ;
+VAL_ Env_EK_2SP 1 "press" 0 "release" ;
+VAL_ Env_EK_1SP 1 "press" 0 "release" ;
+

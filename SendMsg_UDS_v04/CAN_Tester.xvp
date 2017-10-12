@@ -1,0 +1,888 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls">
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl6" Children="Controls">
+      <Property Name="Name">StaticTextControl6</Property>
+      <Property Name="Size">267, 23</Property>
+      <Property Name="Location">645, 396</Property>
+      <Property Name="Text">V0.3: Add CAP1335 Security Algorithm</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl5" Children="Controls">
+      <Property Name="Name">StaticTextControl5</Property>
+      <Property Name="Size">117, 33</Property>
+      <Property Name="Location">1025, 2</Property>
+      <Property Name="Font">SimSun, 24pt, style=Bold, Italic</Property>
+      <Property Name="TextAlign">MiddleCenter</Property>
+      <Property Name="Text">APPSYS</Property>
+      <Property Name="ForeColor">0, 0, 192</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl25" Children="Controls">
+      <Property Name="Name">ButtonControl25</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">1057, 353</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag32;1;;</Property>
+      <Property Name="TabIndex">73</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl25" Children="Controls">
+      <Property Name="Name">TextBoxControl25</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">593, 354</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_32</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data32;4;;</Property>
+      <Property Name="TabIndex">72</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl26" Children="Controls">
+      <Property Name="Name">ButtonControl26</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">1057, 325</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag31;1;;</Property>
+      <Property Name="TabIndex">71</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl26" Children="Controls">
+      <Property Name="Name">TextBoxControl26</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">593, 326</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_31</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data31;4;;</Property>
+      <Property Name="TabIndex">70</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl27" Children="Controls">
+      <Property Name="Name">ButtonControl27</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">1057, 297</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag30;1;;</Property>
+      <Property Name="TabIndex">69</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl27" Children="Controls">
+      <Property Name="Name">TextBoxControl27</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">593, 298</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_30</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data30;4;;</Property>
+      <Property Name="TabIndex">68</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl28" Children="Controls">
+      <Property Name="Name">ButtonControl28</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">1057, 269</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag29;1;;</Property>
+      <Property Name="TabIndex">67</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl28" Children="Controls">
+      <Property Name="Name">TextBoxControl28</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">593, 270</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_29</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data29;4;;</Property>
+      <Property Name="TabIndex">66</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl29" Children="Controls">
+      <Property Name="Name">ButtonControl29</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">1057, 241</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag28;1;;</Property>
+      <Property Name="TabIndex">65</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl29" Children="Controls">
+      <Property Name="Name">TextBoxControl29</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">593, 242</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_28</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data28;4;;</Property>
+      <Property Name="TabIndex">64</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl30" Children="Controls">
+      <Property Name="Name">ButtonControl30</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">1057, 213</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag27;1;;</Property>
+      <Property Name="TabIndex">63</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl30" Children="Controls">
+      <Property Name="Name">TextBoxControl30</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">593, 214</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_27</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data27;4;;</Property>
+      <Property Name="TabIndex">62</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl31" Children="Controls">
+      <Property Name="Name">ButtonControl31</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">1057, 185</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag26;1;;</Property>
+      <Property Name="TabIndex">61</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl31" Children="Controls">
+      <Property Name="Name">TextBoxControl31</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">593, 186</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_26</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data26;4;;</Property>
+      <Property Name="TabIndex">60</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl32" Children="Controls">
+      <Property Name="Name">ButtonControl32</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">1057, 157</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag25;1;;</Property>
+      <Property Name="TabIndex">59</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl32" Children="Controls">
+      <Property Name="Name">TextBoxControl32</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">593, 158</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_25</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data25;4;;</Property>
+      <Property Name="TabIndex">58</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl33" Children="Controls">
+      <Property Name="Name">ButtonControl33</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">1057, 129</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag24;1;;</Property>
+      <Property Name="TabIndex">57</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl33" Children="Controls">
+      <Property Name="Name">TextBoxControl33</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">593, 130</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_24</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data24;4;;</Property>
+      <Property Name="TabIndex">56</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl34" Children="Controls">
+      <Property Name="Name">ButtonControl34</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">1057, 101</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag23;1;;</Property>
+      <Property Name="TabIndex">55</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl34" Children="Controls">
+      <Property Name="Name">TextBoxControl34</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">593, 102</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_23</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data23;4;;</Property>
+      <Property Name="TabIndex">54</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl35" Children="Controls">
+      <Property Name="Name">ButtonControl35</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">1057, 73</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag22;1;;</Property>
+      <Property Name="TabIndex">53</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl35" Children="Controls">
+      <Property Name="Name">TextBoxControl35</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">593, 74</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_22</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data22;4;;</Property>
+      <Property Name="TabIndex">52</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl36" Children="Controls">
+      <Property Name="Name">ButtonControl36</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">1057, 45</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag21;1;;</Property>
+      <Property Name="TabIndex">51</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl36" Children="Controls">
+      <Property Name="Name">TextBoxControl36</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">593, 46</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_21</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data21;4;;</Property>
+      <Property Name="TabIndex">50</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl17" Children="Controls">
+      <Property Name="Name">ButtonControl17</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 578</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag20;1;;</Property>
+      <Property Name="TabIndex">48</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl17" Children="Controls">
+      <Property Name="Name">TextBoxControl17</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 579</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_20</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data20;4;;</Property>
+      <Property Name="TabIndex">47</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl18" Children="Controls">
+      <Property Name="Name">ButtonControl18</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 550</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag19;1;;</Property>
+      <Property Name="TabIndex">46</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl18" Children="Controls">
+      <Property Name="Name">TextBoxControl18</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 551</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_19</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data19;4;;</Property>
+      <Property Name="TabIndex">45</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl19" Children="Controls">
+      <Property Name="Name">ButtonControl19</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 522</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag18;1;;</Property>
+      <Property Name="TabIndex">44</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl19" Children="Controls">
+      <Property Name="Name">TextBoxControl19</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 523</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_18</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data18;4;;</Property>
+      <Property Name="TabIndex">43</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl20" Children="Controls">
+      <Property Name="Name">ButtonControl20</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 494</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag17;1;;</Property>
+      <Property Name="TabIndex">42</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl20" Children="Controls">
+      <Property Name="Name">TextBoxControl20</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 495</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_17</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data17;4;;</Property>
+      <Property Name="TabIndex">41</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl4" Children="Controls">
+      <Property Name="Name">StaticTextControl4</Property>
+      <Property Name="Size">100, 13</Property>
+      <Property Name="Location">181, 14</Property>
+      <Property Name="Text">CAP133x</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl3" Children="Controls">
+      <Property Name="Name">StaticTextControl3</Property>
+      <Property Name="Size">117, 33</Property>
+      <Property Name="Location">445, 3</Property>
+      <Property Name="Font">SimSun, 24pt, style=Bold, Italic</Property>
+      <Property Name="TextAlign">MiddleCenter</Property>
+      <Property Name="Text">APPSYS</Property>
+      <Property Name="ForeColor">0, 0, 192</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl9" Children="Controls">
+      <Property Name="Name">ButtonControl9</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 466</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag16;1;;</Property>
+      <Property Name="TabIndex">38</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl9" Children="Controls">
+      <Property Name="Name">TextBoxControl9</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 467</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_16</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data16;4;;</Property>
+      <Property Name="TabIndex">37</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl10" Children="Controls">
+      <Property Name="Name">ButtonControl10</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 438</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag15;1;;</Property>
+      <Property Name="TabIndex">36</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl10" Children="Controls">
+      <Property Name="Name">TextBoxControl10</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 439</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_15</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data15;4;;</Property>
+      <Property Name="TabIndex">35</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl11" Children="Controls">
+      <Property Name="Name">ButtonControl11</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 410</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag14;1;;</Property>
+      <Property Name="TabIndex">34</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl11" Children="Controls">
+      <Property Name="Name">TextBoxControl11</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 411</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_14</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data14;4;;</Property>
+      <Property Name="TabIndex">33</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl12" Children="Controls">
+      <Property Name="Name">ButtonControl12</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 382</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag13;1;;</Property>
+      <Property Name="TabIndex">32</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl12" Children="Controls">
+      <Property Name="Name">TextBoxControl12</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 383</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_13</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data13;4;;</Property>
+      <Property Name="TabIndex">31</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl13" Children="Controls">
+      <Property Name="Name">ButtonControl13</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 354</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag12;1;;</Property>
+      <Property Name="TabIndex">30</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl13" Children="Controls">
+      <Property Name="Name">TextBoxControl13</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 355</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_12</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data12;4;;</Property>
+      <Property Name="TabIndex">29</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl14" Children="Controls">
+      <Property Name="Name">ButtonControl14</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 326</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag11;1;;</Property>
+      <Property Name="TabIndex">28</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl14" Children="Controls">
+      <Property Name="Name">TextBoxControl14</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 327</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_11</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data11;4;;</Property>
+      <Property Name="TabIndex">27</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl15" Children="Controls">
+      <Property Name="Name">ButtonControl15</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 298</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag10;1;;</Property>
+      <Property Name="TabIndex">26</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl15" Children="Controls">
+      <Property Name="Name">TextBoxControl15</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 299</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_10</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data10;4;;</Property>
+      <Property Name="TabIndex">25</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl16" Children="Controls">
+      <Property Name="Name">ButtonControl16</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 270</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag09;1;;</Property>
+      <Property Name="TabIndex">24</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl16" Children="Controls">
+      <Property Name="Name">TextBoxControl16</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 271</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_09</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data09;4;;</Property>
+      <Property Name="TabIndex">23</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl5" Children="Controls">
+      <Property Name="Name">ButtonControl5</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 242</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag08;1;;</Property>
+      <Property Name="TabIndex">22</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl5" Children="Controls">
+      <Property Name="Name">TextBoxControl5</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 243</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_08</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data08;4;;</Property>
+      <Property Name="TabIndex">21</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl6" Children="Controls">
+      <Property Name="Name">ButtonControl6</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 214</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag07;1;;</Property>
+      <Property Name="TabIndex">20</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl6" Children="Controls">
+      <Property Name="Name">TextBoxControl6</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 215</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_07</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data07;4;;</Property>
+      <Property Name="TabIndex">19</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl7" Children="Controls">
+      <Property Name="Name">ButtonControl7</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 186</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag06;1;;</Property>
+      <Property Name="TabIndex">18</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl7" Children="Controls">
+      <Property Name="Name">TextBoxControl7</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 187</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_06</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data06;4;;</Property>
+      <Property Name="TabIndex">17</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl8" Children="Controls">
+      <Property Name="Name">ButtonControl8</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 158</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag05;1;;</Property>
+      <Property Name="TabIndex">16</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl8" Children="Controls">
+      <Property Name="Name">TextBoxControl8</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 159</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_05</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data05;4;;</Property>
+      <Property Name="TabIndex">15</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl3" Children="Controls">
+      <Property Name="Name">ButtonControl3</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 130</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag04;1;;</Property>
+      <Property Name="TabIndex">14</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl3" Children="Controls">
+      <Property Name="Name">TextBoxControl3</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 131</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_04</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data04;4;;</Property>
+      <Property Name="TabIndex">13</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl4" Children="Controls">
+      <Property Name="Name">ButtonControl4</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 102</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag03;1;;</Property>
+      <Property Name="TabIndex">12</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl4" Children="Controls">
+      <Property Name="Name">TextBoxControl4</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 103</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_03</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data03;4;;</Property>
+      <Property Name="TabIndex">11</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl2" Children="Controls">
+      <Property Name="Name">StaticTextControl2</Property>
+      <Property Name="Size">161, 16</Property>
+      <Property Name="Location">13, 12</Property>
+      <Property Name="Font">SimSun, 12pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleCenter</Property>
+      <Property Name="Text">CAN_Tester (V0.1)</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl2" Children="Controls">
+      <Property Name="Name">ButtonControl2</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 74</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag02;1;;</Property>
+      <Property Name="TabIndex">9</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl2" Children="Controls">
+      <Property Name="Name">TextBoxControl2</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 75</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_02</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data02;4;;</Property>
+      <Property Name="TabIndex">8</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl1" Children="Controls">
+      <Property Name="Name">ButtonControl1</Property>
+      <Property Name="Size">66, 22</Property>
+      <Property Name="Location">477, 46</Property>
+      <Property Name="Text">Send</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Flag01;1;;</Property>
+      <Property Name="TabIndex">7</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl1" Children="Controls">
+      <Property Name="Name">StaticTextControl1</Property>
+      <Property Name="Size">147, 58</Property>
+      <Property Name="Location">976, 542</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="BorderStyle">Fixed3D</Property>
+      <Property Name="Text">Version: V0.3
+Tester ID(fun): 0x7FF
+Tester ID(phy): 0x760 
+ECU_Response ID : 0x660</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl1" Children="Controls">
+      <Property Name="Name">TextBoxControl1</Property>
+      <Property Name="Size">458, 22</Property>
+      <Property Name="Location">13, 47</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Text</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">Data_01</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;CAN_tester;;;Tester_Req_Data01;4;;</Property>
+      <Property Name="TabIndex">0</Property>
+    </Object>
+    <Property Name="Name">Panel</Property>
+    <Property Name="Size">1156, 642</Property>
+  </Object>
+</Panel>

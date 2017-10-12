@@ -1,0 +1,950 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls">
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl34">
+      <Property Name="Name">SwitchControl34</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">571, 573</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_CSV_EnterSP;1;;</Property>
+      <Property Name="TabIndex">406</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl37" Children="Controls">
+      <Property Name="Name">StaticTextControl37</Property>
+      <Property Name="Size">70, 30</Property>
+      <Property Name="Location">624, 603</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">OK</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl36" Children="Controls">
+      <Property Name="Name">StaticTextControl36</Property>
+      <Property Name="Size">82, 24</Property>
+      <Property Name="Location">679, 573</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleCenter</Property>
+      <Property Name="Text">SEEK+/- </Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl4" Children="Controls">
+      <Property Name="Name">TextBoxControl4</Property>
+      <Property Name="Size">74, 22</Property>
+      <Property Name="Location">679, 558</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="BoxForeColor">Red</Property>
+      <Property Name="ValueDecimalPlaces">0</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ReadOnlyControl">True</Property>
+      <Property Name="BoxTextAlign">Center</Property>
+      <Property Name="ValueDisplay">Decimal</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="BoxFont">SimSun, 9pt, style=Bold</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Hide</Property>
+      <Property Name="DescriptionText">Env_CSV_SEEK_Display:</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_CSV_SEEK_Display;1;;</Property>
+      <Property Name="TabIndex">402</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl4" Children="Controls">
+      <Property Name="Name">TrackBarControl4</Property>
+      <Property Name="Size">182, 47</Property>
+      <Property Name="Location">571, 507</Property>
+      <Property Name="Maximum">127</Property>
+      <Property Name="DisplayMinMax">True</Property>
+      <Property Name="Minimum">-128</Property>
+      <Property Name="MaximumDouble">127</Property>
+      <Property Name="MinimumDouble">-128</Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_CSV_SEEK;1;;</Property>
+      <Property Name="TabIndex">401</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl29" Children="Controls">
+      <Property Name="Name">StaticTextControl29</Property>
+      <Property Name="Size">82, 24</Property>
+      <Property Name="Location">52, 558</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleCenter</Property>
+      <Property Name="Text">VOL +/- :</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl28">
+      <Property Name="Name">SwitchControl28</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">469, 507</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_CSV_ModeSP;1;;</Property>
+      <Property Name="TabIndex">393</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl30" Children="Controls">
+      <Property Name="Name">StaticTextControl30</Property>
+      <Property Name="Size">70, 30</Property>
+      <Property Name="Location">518, 537</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">MODE</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl3" Children="Controls">
+      <Property Name="Name">ButtonControl3</Property>
+      <Property Name="Size">84, 32</Property>
+      <Property Name="Location">52, 586</Property>
+      <Property Name="Text">CSV_PWR</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_CSV_PWR_ON;1;;</Property>
+      <Property Name="TabIndex">392</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.RadioButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="RadioButtonControl3" Children="Controls">
+      <Property Name="Name">RadioButtonControl3</Property>
+      <Property Name="Size">30, 32</Property>
+      <Property Name="Location">154, 586</Property>
+      <Property Name="Text">
+      </Property>
+      <Property Name="CheckAlign">MiddleCenter</Property>
+      <Property Name="ReadOnlyControl">True</Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_CSV_PWR_ON_Display;1;;</Property>
+      <Property Name="TabIndex">391</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl3" Children="Controls">
+      <Property Name="Name">TextBoxControl3</Property>
+      <Property Name="Size">74, 22</Property>
+      <Property Name="Location">133, 558</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="BoxForeColor">Red</Property>
+      <Property Name="ValueDecimalPlaces">0</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ReadOnlyControl">True</Property>
+      <Property Name="BoxTextAlign">Center</Property>
+      <Property Name="ValueDisplay">Decimal</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="BoxFont">SimSun, 9pt, style=Bold</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Hide</Property>
+      <Property Name="DescriptionText">Env_CSV_VOL_UP_Down_Display:</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_CSV_VOL_UP_Down_Display;1;;</Property>
+      <Property Name="TabIndex">390</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl3" Children="Controls">
+      <Property Name="Name">TrackBarControl3</Property>
+      <Property Name="Size">182, 47</Property>
+      <Property Name="Location">46, 507</Property>
+      <Property Name="Maximum">127</Property>
+      <Property Name="DisplayMinMax">True</Property>
+      <Property Name="Minimum">-128</Property>
+      <Property Name="MaximumDouble">127</Property>
+      <Property Name="MinimumDouble">-128</Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_CSV_VOL_UP_Down;1;;</Property>
+      <Property Name="TabIndex">389</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl29">
+      <Property Name="Name">SwitchControl29</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">469, 573</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_CSV_ListSP;1;;</Property>
+      <Property Name="TabIndex">388</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl31" Children="Controls">
+      <Property Name="Name">StaticTextControl31</Property>
+      <Property Name="Size">70, 30</Property>
+      <Property Name="Location">521, 603</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">LIST</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl30">
+      <Property Name="Name">SwitchControl30</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">354, 573</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_CSV_EscSP;1;;</Property>
+      <Property Name="TabIndex">387</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl32" Children="Controls">
+      <Property Name="Name">StaticTextControl32</Property>
+      <Property Name="Size">70, 30</Property>
+      <Property Name="Location">406, 603</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">ESC</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl31">
+      <Property Name="Name">SwitchControl31</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">354, 507</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_CSV_PhoneSP;1;;</Property>
+      <Property Name="TabIndex">386</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl33" Children="Controls">
+      <Property Name="Name">StaticTextControl33</Property>
+      <Property Name="Size">70, 30</Property>
+      <Property Name="Location">406, 545</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">PHONE</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl32">
+      <Property Name="Name">SwitchControl32</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">244, 573</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_CSV_MuteSP;1;;</Property>
+      <Property Name="TabIndex">385</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl34" Children="Controls">
+      <Property Name="Name">StaticTextControl34</Property>
+      <Property Name="Size">70, 30</Property>
+      <Property Name="Location">293, 603</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">MUTE</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl33">
+      <Property Name="Name">SwitchControl33</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">244, 507</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_CSV_SourceSP;1;;</Property>
+      <Property Name="TabIndex">384</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl35" Children="Controls">
+      <Property Name="Name">StaticTextControl35</Property>
+      <Property Name="Size">70, 30</Property>
+      <Property Name="Location">293, 545</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">SRC</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl28" Children="Controls">
+      <Property Name="Name">StaticTextControl28</Property>
+      <Property Name="Size">82, 24</Property>
+      <Property Name="Location">52, 355</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleCenter</Property>
+      <Property Name="Text">SCAN +/- :</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl27">
+      <Property Name="Name">SwitchControl27</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">244, 370</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_VCI_SeekDownSP;1;;</Property>
+      <Property Name="TabIndex">374</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl27" Children="Controls">
+      <Property Name="Name">StaticTextControl27</Property>
+      <Property Name="Size">60, 30</Property>
+      <Property Name="Location">293, 400</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">SEEK-</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl2" Children="Controls">
+      <Property Name="Name">ButtonControl2</Property>
+      <Property Name="Size">84, 32</Property>
+      <Property Name="Location">52, 383</Property>
+      <Property Name="Text">VCI_PWR</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_VCI_PWR_ON;1;;</Property>
+      <Property Name="TabIndex">372</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.RadioButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="RadioButtonControl2" Children="Controls">
+      <Property Name="Name">RadioButtonControl2</Property>
+      <Property Name="Size">30, 32</Property>
+      <Property Name="Location">154, 383</Property>
+      <Property Name="Text">
+      </Property>
+      <Property Name="CheckAlign">MiddleCenter</Property>
+      <Property Name="ReadOnlyControl">True</Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_VCI_PWR_ON_Display;1;;</Property>
+      <Property Name="TabIndex">371</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl2" Children="Controls">
+      <Property Name="Name">TextBoxControl2</Property>
+      <Property Name="Size">74, 22</Property>
+      <Property Name="Location">133, 355</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="BoxForeColor">Red</Property>
+      <Property Name="ValueDecimalPlaces">0</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ReadOnlyControl">True</Property>
+      <Property Name="BoxTextAlign">Center</Property>
+      <Property Name="ValueDisplay">Decimal</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="BoxFont">SimSun, 9pt, style=Bold</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Hide</Property>
+      <Property Name="DescriptionText">Env_VCI_SCAN_Display:</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_VCI_SCAN_Display;1;;</Property>
+      <Property Name="TabIndex">370</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl2" Children="Controls">
+      <Property Name="Name">TrackBarControl2</Property>
+      <Property Name="Size">182, 47</Property>
+      <Property Name="Location">46, 304</Property>
+      <Property Name="Maximum">127</Property>
+      <Property Name="DisplayMinMax">True</Property>
+      <Property Name="Minimum">-128</Property>
+      <Property Name="MaximumDouble">127</Property>
+      <Property Name="MinimumDouble">-128</Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_VCI_SCAN;1;;</Property>
+      <Property Name="TabIndex">369</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl22">
+      <Property Name="Name">SwitchControl22</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">469, 370</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_VCI_VolDownSP;1;;</Property>
+      <Property Name="TabIndex">363</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl22" Children="Controls">
+      <Property Name="Name">StaticTextControl22</Property>
+      <Property Name="Size">60, 30</Property>
+      <Property Name="Location">521, 400</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">VOL-</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl23">
+      <Property Name="Name">SwitchControl23</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">469, 304</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_VCI_VolUpSP;1;;</Property>
+      <Property Name="TabIndex">362</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl23" Children="Controls">
+      <Property Name="Name">StaticTextControl23</Property>
+      <Property Name="Size">60, 30</Property>
+      <Property Name="Location">521, 334</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">VOL+</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl24">
+      <Property Name="Name">SwitchControl24</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">354, 370</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_VCI_MuteSP;1;;</Property>
+      <Property Name="TabIndex">361</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl24" Children="Controls">
+      <Property Name="Name">StaticTextControl24</Property>
+      <Property Name="Size">69, 30</Property>
+      <Property Name="Location">402, 400</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">VOL+and-</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl25">
+      <Property Name="Name">SwitchControl25</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">244, 304</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_VCI_SeekUpSP;1;;</Property>
+      <Property Name="TabIndex">360</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl25" Children="Controls">
+      <Property Name="Name">StaticTextControl25</Property>
+      <Property Name="Size">60, 30</Property>
+      <Property Name="Location">293, 334</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">SEEK+</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl26">
+      <Property Name="Name">SwitchControl26</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">354, 304</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_VCI_SourceSP;1;;</Property>
+      <Property Name="TabIndex">359</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl26" Children="Controls">
+      <Property Name="Name">StaticTextControl26</Property>
+      <Property Name="Size">60, 30</Property>
+      <Property Name="Location">402, 334</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">OK/SRC</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl24" Children="Controls">
+      <Property Name="Name">ButtonControl24</Property>
+      <Property Name="Size">75, 30</Property>
+      <Property Name="Location">52, 189</Property>
+      <Property Name="Text">FMUX_PWR</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_KB_PWR_ON;1;;</Property>
+      <Property Name="TabIndex">331</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl1" Children="Controls">
+      <Property Name="Name">TextBoxControl1</Property>
+      <Property Name="Size">87, 22</Property>
+      <Property Name="Location">255, 151</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="BoxForeColor">Red</Property>
+      <Property Name="ValueDecimalPlaces">0</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ReadOnlyControl">True</Property>
+      <Property Name="BoxTextAlign">Center</Property>
+      <Property Name="ValueDisplay">Decimal</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="BoxFont">SimSun, 9pt, style=Bold</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Hide</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_KB_VOL_UP_Down_Display;1;;</Property>
+      <Property Name="TabIndex">330</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl17">
+      <Property Name="Name">SwitchControl17</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">369, 166</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_DarkSP;1;;</Property>
+      <Property Name="TabIndex">324</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl17" Children="Controls">
+      <Property Name="Name">StaticTextControl17</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">421, 195</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">Dark</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl18">
+      <Property Name="Name">SwitchControl18</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">790, 41</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_MenuSP;1;;</Property>
+      <Property Name="TabIndex">323</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl18" Children="Controls">
+      <Property Name="Name">StaticTextControl18</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">842, 71</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">MENU</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl19">
+      <Property Name="Name">SwitchControl19</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">580, 166</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_BandSP;1;;</Property>
+      <Property Name="TabIndex">322</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl19" Children="Controls">
+      <Property Name="Name">StaticTextControl19</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">633, 195</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">BAND</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl20">
+      <Property Name="Name">SwitchControl20</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">790, 104</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_EscSP;1;;</Property>
+      <Property Name="TabIndex">321</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl20" Children="Controls">
+      <Property Name="Name">StaticTextControl20</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">842, 134</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">Esc</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl21">
+      <Property Name="Name">SwitchControl21</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">789, 166</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_EjectSP;1;;</Property>
+      <Property Name="TabIndex">320</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl21" Children="Controls">
+      <Property Name="Name">StaticTextControl21</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">841, 195</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">Eject</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl15">
+      <Property Name="Name">SwitchControl15</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">681, 104</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_SeekDownSP;1;;</Property>
+      <Property Name="TabIndex">312</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl15" Children="Controls">
+      <Property Name="Name">StaticTextControl15</Property>
+      <Property Name="Size">60, 30</Property>
+      <Property Name="Location">734, 134</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">Seek 
+Down</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl16">
+      <Property Name="Name">SwitchControl16</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">581, 104</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_SeekUpSP;1;;</Property>
+      <Property Name="TabIndex">311</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl16" Children="Controls">
+      <Property Name="Name">StaticTextControl16</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">634, 134</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">Seek
+UP</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl10">
+      <Property Name="Name">SwitchControl10</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">477, 166</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_MusicSP;1;;</Property>
+      <Property Name="TabIndex">304</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl10" Children="Controls">
+      <Property Name="Name">StaticTextControl10</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">526, 195</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">MUSIC</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl11">
+      <Property Name="Name">SwitchControl11</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">680, 166</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_EnterSP;1;;</Property>
+      <Property Name="TabIndex">303</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl11" Children="Controls">
+      <Property Name="Name">StaticTextControl11</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">733, 195</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">OK</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl13">
+      <Property Name="Name">SwitchControl13</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">681, 41</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_TuneDownSP;1;;</Property>
+      <Property Name="TabIndex">302</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl13" Children="Controls">
+      <Property Name="Name">StaticTextControl13</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">734, 71</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">Tune
+Down</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl14">
+      <Property Name="Name">SwitchControl14</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">581, 41</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_TuneUpSP;1;;</Property>
+      <Property Name="TabIndex">301</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl14" Children="Controls">
+      <Property Name="Name">StaticTextControl14</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">634, 71</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">Tune
+UP</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl4">
+      <Property Name="Name">SwitchControl4</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">478, 104</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_SourceSP;1;;</Property>
+      <Property Name="TabIndex">294</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl8" Children="Controls">
+      <Property Name="Name">StaticTextControl8</Property>
+      <Property Name="Size">31, 30</Property>
+      <Property Name="Location">527, 134</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">SRC</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl7">
+      <Property Name="Name">SwitchControl7</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">478, 41</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_ListSP;1;;</Property>
+      <Property Name="TabIndex">293</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl9" Children="Controls">
+      <Property Name="Name">StaticTextControl9</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">527, 71</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">LIST</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl3">
+      <Property Name="Name">SwitchControl3</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">369, 104</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_MuteSP;1;;</Property>
+      <Property Name="TabIndex">289</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl7" Children="Controls">
+      <Property Name="Name">StaticTextControl7</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">421, 132</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">MUTE</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl12">
+      <Property Name="Name">SwitchControl12</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">370, 41</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_ModeSP;1;;</Property>
+      <Property Name="TabIndex">287</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl12" Children="Controls">
+      <Property Name="Name">StaticTextControl12</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">422, 71</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">MODE</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl6" Children="Controls">
+      <Property Name="Name">StaticTextControl6</Property>
+      <Property Name="Size">46, 23</Property>
+      <Property Name="Location">296, 107</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleCenter</Property>
+      <Property Name="BorderStyle">FixedSingle</Property>
+      <Property Name="Text">6</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl42" Children="Controls">
+      <Property Name="Name">StaticTextControl42</Property>
+      <Property Name="Size">46, 23</Property>
+      <Property Name="Location">244, 107</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleCenter</Property>
+      <Property Name="BorderStyle">FixedSingle</Property>
+      <Property Name="Text">5</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl41" Children="Controls">
+      <Property Name="Name">StaticTextControl41</Property>
+      <Property Name="Size">46, 23</Property>
+      <Property Name="Location">194, 107</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleCenter</Property>
+      <Property Name="BorderStyle">FixedSingle</Property>
+      <Property Name="Text">4</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl40" Children="Controls">
+      <Property Name="Name">StaticTextControl40</Property>
+      <Property Name="Size">46, 23</Property>
+      <Property Name="Location">146, 107</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleCenter</Property>
+      <Property Name="BorderStyle">FixedSingle</Property>
+      <Property Name="Text">3</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl39" Children="Controls">
+      <Property Name="Name">StaticTextControl39</Property>
+      <Property Name="Size">46, 23</Property>
+      <Property Name="Location">96, 107</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleCenter</Property>
+      <Property Name="BorderStyle">FixedSingle</Property>
+      <Property Name="Text">2</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl38" Children="Controls">
+      <Property Name="Name">StaticTextControl38</Property>
+      <Property Name="Size">46, 23</Property>
+      <Property Name="Location">46, 107</Property>
+      <Property Name="Font">SimSun, 9pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleCenter</Property>
+      <Property Name="BorderStyle">FixedSingle</Property>
+      <Property Name="Text">1</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.RadioButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="RadioButtonControl1" Children="Controls">
+      <Property Name="Name">RadioButtonControl1</Property>
+      <Property Name="Size">30, 30</Property>
+      <Property Name="Location">133, 189</Property>
+      <Property Name="Text">
+      </Property>
+      <Property Name="CheckAlign">MiddleCenter</Property>
+      <Property Name="ReadOnlyControl">True</Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_KB_PWR_ON_Display;1;;</Property>
+      <Property Name="TabIndex">257</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl8">
+      <Property Name="Name">SwitchControl8</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">296, 41</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_6SP;1;;</Property>
+      <Property Name="TabIndex">33</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl9">
+      <Property Name="Name">SwitchControl9</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">146, 41</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_3SP;1;;</Property>
+      <Property Name="TabIndex">32</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl5">
+      <Property Name="Name">SwitchControl5</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">244, 41</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_5SP;1;;</Property>
+      <Property Name="TabIndex">30</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl6">
+      <Property Name="Name">SwitchControl6</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">96, 41</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_2SP;1;;</Property>
+      <Property Name="TabIndex">29</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl2">
+      <Property Name="Name">SwitchControl2</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">194, 41</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_4SP;1;;</Property>
+      <Property Name="TabIndex">27</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl1">
+      <Property Name="Name">SwitchControl1</Property>
+      <Property Name="Size">46, 60</Property>
+      <Property Name="Location">46, 41</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="IsButton">True</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_EK_1SP;1;;</Property>
+      <Property Name="TabIndex">26</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl1" Children="Controls">
+      <Property Name="Name">TrackBarControl1</Property>
+      <Property Name="Size">203, 47</Property>
+      <Property Name="Location">46, 136</Property>
+      <Property Name="Maximum">127</Property>
+      <Property Name="DisplayMinMax">True</Property>
+      <Property Name="Minimum">-128</Property>
+      <Property Name="MaximumDouble">127</Property>
+      <Property Name="MinimumDouble">-128</Property>
+      <Property Name="SymbolConfiguration">3;1;SimulativeKey;;;Env_KB_VOL_UP_Down;1;;</Property>
+      <Property Name="TabIndex">255</Property>
+    </Object>
+    <Property Name="Name">Panel</Property>
+    <Property Name="Size">933, 692</Property>
+  </Object>
+</Panel>

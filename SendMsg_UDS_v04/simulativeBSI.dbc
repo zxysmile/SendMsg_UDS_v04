@@ -1,0 +1,169 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Sim_BSI
+VAL_TABLE_ Enr_SW_status 1 "ON" 0 "OFF" ;
+VAL_TABLE_ Network_life_phase 4 "COM_OFF" 3 "Wake" 2 "Switch to standby" 1 "Normal mode" 0 "Standby" ;
+VAL_TABLE_ Day_Night_state 1 "Night state" 0 "Day state" ;
+VAL_TABLE_ bool_status_01 1 "Active" 0 "Non active" ;
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ OVF_VOL_SUP_ET_VCI_Copy_1 : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 694 Msg_VIN_VIS: 8 Sim_BSI
+ SG_ VIS_byte7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIS_byte6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIS_byte5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIS_byte4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIS_byte3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIS_byte2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIS_byte1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIS_byte0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 162 Msg_VMF_Info: 6 Sim_BSI
+ SG_ OVF_VOL_INF_ET_VCI : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ OVF_VOL_SUP_ET_VCI : 33|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CDE_TEL_KML : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CDE_VOCALE_ET_VMF : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PSH_GH_ET_HDC : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MODE_ET_VMF : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MENU_ET_VMF : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESCAPE_ET_VMF : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VALID_ET_VMF : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ OVF_NAV_INF_ET_VMF : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ OVF_NAV_SUP_ET_VMF : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMPT_VOL_VCI : 40|8@1- (1,0) [-128|127] "" Vector__XXX
+ SG_ CMPT_NAV_MENU_VMF : 0|8@1- (1,0) [-128|127] "" Vector__XXX
+
+BO_ 545 Msg_ODB_ButtonInf: 7 Sim_BSI
+ SG_ POUSSOIR_NAV : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 182 Msg_BSI_SpeedInf: 8 Sim_BSI
+ SG_ SECU_VITV : 63|1@1- (1,0) [0|1] "" Vector__XXX
+ SG_ VITV : 23|16@0+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 566 Msg_BSI_SlowData2: 7 Sim_BSI
+ SG_ COMPTEUR_RAZ_GCT : 48|8@1- (1,0) [0|255] "" Vector__XXX
+ SG_ CTX_JDD : 40|5@1- (1,0) [0|32] "" Vector__XXX
+ SG_ CPT_TEMPOREL : 15|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODE_CONFIG_VHL : 0|4@1- (1,0) [0|15] "" Vector__XXX
+ SG_ ETAT_RESEAU_ELEC : 4|4@1- (1,0) [0|15] "" Vector__XXX
+
+BO_ 246 Msg_BSI_SlowData: 8 Sim_BSI
+ SG_ KM_TOTAL : 23|24@0+ (1,0) [0|16777215] "" Vector__XXX
+ SG_ TYPE_DIR : 60|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ETAT_GMP : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ETAT_PRINCIP_SEV : 3|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ MDE_CFG : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 54 Msg_COMMANDES_BSI: 8 Sim_BSI
+ SG_ INVIOLABILITE_AUDIO : 57|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SYNC_ON_OFF_RAD : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ON_OFF_RAD : 49|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UB_ETAT_GMP_HY : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ETAT_GMP_HY : 45|3@1- (1,0) [0|5] "" Vector__XXX
+ SG_ PHASE_VIE : 32|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ INTERD_MEMO_DEF : 35|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIAG_MUX_ON : 37|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DEM_EFFAC_DEF : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LUMINOSITE : 24|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ ETAT_JN : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 543 Msg_CDE_RADIO: 3 Sim_BSI
+ SG_ CMPT_MOL_ET_HDC : 8|8@1- (1,0) [-128|127] "" Vector__XXX
+ SG_ LIST_MOINS_ET_HDC : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LIST_PLUS_ET_HDC : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ HDC_RECO_VOC : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SOURCE_HDC : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VALID_CDE_RADIO : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LIST_ET_HDC : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MODE_TELEPH_ET_HDC : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VOLUME_DWN_ET_HDC : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VOLUME_UP_ET_HDC : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ OVF_SCAN_DWN_ET_HDC : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ OVF_SCAN_UP_ET_HDC : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SEEK_DWN_ET_HDC : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SEEK_UP_ET_HDC : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+
+
+
+EV_ Env_PWR_ON_Display: 0 [0|1] "" 0 1 DUMMY_NODE_VECTOR3 Vector__XXX;
+
+EV_ Env_BSI_StartSW: 0 [0|1] "" 0 2 DUMMY_NODE_VECTOR3  Sim_BSI;
+
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BU_  "CANoeJitterMax" INT 0 0;
+BA_DEF_ BU_  "CANoeJitterMin" INT 0 0;
+BA_DEF_ BU_  "CANoeDrift" INT 0 0;
+BA_DEF_ BU_  "CANoeStartDelay" INT 0 0;
+BA_DEF_DEF_  "BusType" "";
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "CANoeJitterMax" 0;
+BA_DEF_DEF_  "CANoeJitterMin" 0;
+BA_DEF_DEF_  "CANoeDrift" 0;
+BA_DEF_DEF_  "CANoeStartDelay" 0;
+VAL_ 3221225472 OVF_VOL_SUP_ET_VCI_Copy_1 1 "Active" 0 "Non active" ;
+VAL_ 162 OVF_VOL_INF_ET_VCI 1 "Active" 0 "Non active" ;
+VAL_ 162 OVF_VOL_SUP_ET_VCI 1 "Active" 0 "Non active" ;
+VAL_ 162 CDE_TEL_KML 1 "Active" 0 "Non active" ;
+VAL_ 162 CDE_VOCALE_ET_VMF 1 "Active" 0 "Non active" ;
+VAL_ 162 PSH_GH_ET_HDC 1 "Active" 0 "Non active" ;
+VAL_ 162 MODE_ET_VMF 1 "Active" 0 "Non active" ;
+VAL_ 162 MENU_ET_VMF 1 "Active" 0 "Non active" ;
+VAL_ 162 ESCAPE_ET_VMF 1 "Active" 0 "Non active" ;
+VAL_ 162 VALID_ET_VMF 1 "Active" 0 "Non active" ;
+VAL_ 162 OVF_NAV_INF_ET_VMF 1 "Active" 0 "Non active" ;
+VAL_ 162 OVF_NAV_SUP_ET_VMF 1 "Active" 0 "Non active" ;
+VAL_ 54 PHASE_VIE 4 "COM_OFF" 3 "Wake" 2 "Switch to standby" 1 "Normal mode" 0 "Standby" ;
+VAL_ 54 LUMINOSITE 1 "Night state" 0 "Day state" ;
+VAL_ 54 ETAT_JN 1 "Night state" 0 "Day state" ;
+VAL_ 543 LIST_MOINS_ET_HDC 1 "Active" 0 "Non active" ;
+VAL_ 543 LIST_PLUS_ET_HDC 1 "Active" 0 "Non active" ;
+VAL_ 543 HDC_RECO_VOC 1 "Active" 0 "Non active" ;
+VAL_ 543 SOURCE_HDC 1 "Active" 0 "Non active" ;
+VAL_ 543 VALID_CDE_RADIO 1 "Active" 0 "Non active" ;
+VAL_ 543 LIST_ET_HDC 1 "Active" 0 "Non active" ;
+VAL_ 543 MODE_TELEPH_ET_HDC 1 "Active" 0 "Non active" ;
+VAL_ 543 VOLUME_DWN_ET_HDC 1 "Active" 0 "Non active" ;
+VAL_ 543 VOLUME_UP_ET_HDC 1 "Active" 0 "Non active" ;
+VAL_ 543 SEEK_DWN_ET_HDC 1 "Active" 0 "Non active" ;
+VAL_ 543 SEEK_UP_ET_HDC 1 "Active" 0 "Non active" ;
+VAL_ Env_BSI_StartSW 1 "ON" 0 "OFF" ;
+

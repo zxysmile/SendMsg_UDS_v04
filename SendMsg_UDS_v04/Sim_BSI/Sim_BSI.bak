@@ -1,0 +1,315 @@
+/*@@var:*/
+variables
+{
+    mstimer Timer0;
+    word ms1_counter = 0;
+    word ms1_cnt_BSI_cmd = 0;
+    word ms1_cnt_BSI_Spd = 0;
+    word ms1_cnt_BSI_ACC = 0;
+    word ms1_cnt_BSI_VCI = 0;
+
+    message 0x036   Msg_BSI_Commands;
+    message 0x0B6   Msg_BSI_SpdInf;
+    message 0x0F6   Msg_BSI_ACCInf;
+    message 0x21F   Msg_BSI_VCI;
+
+    byte fstart = 0;
+    byte fkey_q = 0;
+
+    
+    struct
+    {
+       byte MsgByte0;
+        
+    }BSI_CMD;
+
+
+    byte mVCI_KEY;
+    word ms1_cnt_VCICnt = 0;
+    struct 
+    {
+        byte VCIByte0;
+        byte VCIByte1;
+        byte VCIByte2;
+    }VCIInf;
+
+}
+/*@@end*/
+
+/*@@timer:Timer0:*/
+on timer Timer0
+{
+    ms1_counter++;
+    
+    if(fstart == 1)
+    {
+        /* send 0x036  period:100ms */
+        if(ms1_cnt_BSI_cmd == 0)
+        {
+            ms1_cnt_BSI_cmd = 100;
+//            Trans_Msg_BSI_Commands();
+        }       
+
+        /* send 0x0F6  period:500ms */
+        if(ms1_cnt_BSI_ACC == 0)
+        {
+            ms1_cnt_BSI_ACC = 500;
+//            Trans_Msg_BSI_ACCInf();
+        }
+
+        /* send 0x0B6  period:50ms */
+        if(ms1_cnt_BSI_Spd == 0)
+        {
+            ms1_cnt_BSI_Spd = 50;
+//            Trans_Msg_BSI_SpdInf();
+        } 
+        
+        /* send 0x21F  period:100ms */
+        if(ms1_cnt_BSI_VCI == 0)
+        {
+            ms1_cnt_BSI_VCI = 100;
+            
+            /* zxy debug start */
+            if(fkey_q == 1)
+            {
+                switch(mVCI_KEY)
+                {
+                    case 0:
+                        VCIInf.VCIByte0 = 0x08;
+                        mVCI_KEY = 1;
+                    break;
+
+                    case 1:
+                        VCIInf.VCIByte0 = 0x08;
+                        mVCI_KEY = 2;
+                    break;
+
+                    case 2:
+                        VCIInf.VCIByte0 = 0x08;
+                        mVCI_KEY = 3;
+                    break;
+
+                    case 3:
+                        VCIInf.VCIByte0 = 0x08;
+                        mVCI_KEY = 4;
+
+                    break;
+
+                    case 4:
+                        VCIInf.VCIByte0 = 0x08;
+                        mVCI_KEY = 5;
+                    break;
+                    
+                    case 5:
+                        VCIInf.VCIByte0 = 0x00;
+                        mVCI_KEY = 6;
+                    break;
+                    
+                    case 6:
+                        VCIInf.VCIByte0 = 0x00;
+                        mVCI_KEY = 0;
+                        fkey_q = 0;
+                    break;
+
+                    default:
+                        mVCI_KEY = 0;
+                    break;
+
+                }
+            }
+            else
+            {
+                mVCI_KEY = 0;
+            }
+            /* End zxy debug */
+
+            Trans_Msg_BSI_VCI();
+        }
+
+
+        /* timer counter */
+        if(ms1_cnt_BSI_cmd != 0) ms1_cnt_BSI_cmd--;
+        if(ms1_cnt_BSI_Spd != 0) ms1_cnt_BSI_Spd--;
+        if(ms1_cnt_BSI_ACC != 0) ms1_cnt_BSI_ACC--;
+        if(ms1_cnt_BSI_VCI != 0) ms1_cnt_BSI_VCI--;             
+    }
+    else
+    {
+        ms1_cnt_BSI_cmd = 0;
+        ms1_cnt_BSI_Spd = 0;
+        ms1_cnt_BSI_VCI = 0;
+        ms1_cnt_BSI_ACC = 0; 
+    }
+    
+/* Test for zxy 
+    ms1_cnt_VCICnt++;
+    
+    if(fkey_q == 1)
+    {   
+        if(ms1_cnt_VCICnt < 6000)   //10s
+        {
+            VCIInf.VCIByte0 = 0x00;
+        }
+        else if((ms1_cnt_VCICnt >= 6000) && (ms1_cnt_VCICnt < 9000))
+        {
+            VCIInf.VCIByte0 = 0x00;      
+        }
+        else if((ms1_cnt_VCICnt >= 9000) && (ms1_cnt_VCICnt < 12000))
+        {
+            VCIInf.VCIByte0 = 0x00;
+        }
+        else if((ms1_cnt_VCICnt >= 12000) && (ms1_cnt_VCICnt < 15000))
+        {
+            VCIInf.VCIByte0 = 0x00;        
+        }
+        else
+        {
+            ms1_cnt_VCICnt = 15000;
+            VCIInf.VCIByte0 = 0x00;          
+        }
+    }
+    else
+    {
+        ms1_cnt_VCICnt = 0;
+    }
+End test for zxy */
+
+
+    settimer(Timer0,1);
+}
+/*@@end*/
+
+/*@@startStart:Start:*/
+on start
+{
+    settimer(Timer0,50);
+}
+/*@@end*/
+
+/*@@envVar:Env_BSI_StartSW:*/
+on envVar Env_BSI_StartSW
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_BSI_StartSW);
+
+    if(temp_val == 1)
+    {
+        if(fstart == 1)
+        {
+            fstart = 0;
+            putvalue(Env_PWR_ON_Display, 0);
+        }
+        else
+        {
+            fstart = 1;
+            putvalue(Env_PWR_ON_Display, 1);
+
+            //offset
+            ms1_cnt_BSI_cmd = 0;
+            ms1_cnt_BSI_Spd = 20;
+            ms1_cnt_BSI_ACC = 240;
+            ms1_cnt_BSI_VCI = 100;
+        }
+    }
+
+    
+}
+/*@@end*/
+
+/*@@key:'q':*/
+on key 'q'
+{
+    if(fkey_q == 1)
+    {
+//       fkey_q = 0;
+    }
+    else
+    {
+       fkey_q = 1;
+    }
+   
+}
+/*@@end*/
+
+/*@@caplFunc:Trans_Msg_BSI_Commands():*///function
+void Trans_Msg_BSI_Commands(void)
+{
+    Msg_BSI_Commands.DLC = 0x08;
+    Msg_BSI_Commands.byte(0) = 0x00;
+    Msg_BSI_Commands.byte(1) = 0x00;
+    Msg_BSI_Commands.byte(2) = 0x00;
+    Msg_BSI_Commands.byte(3) = 0x08;
+    Msg_BSI_Commands.byte(4) = 0x01;
+    Msg_BSI_Commands.byte(5) = 0x00;
+    Msg_BSI_Commands.byte(6) = 0x00;
+    Msg_BSI_Commands.byte(7) = 0x00;
+
+    output(Msg_BSI_Commands);
+}
+/*@@end*/
+
+/*@@caplFunc:Trans_Msg_BSI_SpdInf():*///function
+void Trans_Msg_BSI_SpdInf(void)
+{
+    Msg_BSI_SpdInf.DLC = 0x08;
+    Msg_BSI_SpdInf.byte(0) = 0x00;
+    Msg_BSI_SpdInf.byte(1) = 0x00;
+    Msg_BSI_SpdInf.byte(2) = 0x00;
+    Msg_BSI_SpdInf.byte(3) = 0x01;
+    Msg_BSI_SpdInf.byte(4) = 0x00;
+    Msg_BSI_SpdInf.byte(5) = 0x00;
+    Msg_BSI_SpdInf.byte(6) = 0x00;
+    Msg_BSI_SpdInf.byte(7) = 0x80;
+
+    output(Msg_BSI_SpdInf);
+}
+/*@@end*/
+
+/*@@caplFunc:Trans_Msg_BSI_ACCInf():*///function
+void Trans_Msg_BSI_ACCInf(void)
+{
+    Msg_BSI_ACCInf.DLC = 0x08;
+    Msg_BSI_ACCInf.byte(0) = 0x08;
+    Msg_BSI_ACCInf.byte(1) = 0x04;
+    Msg_BSI_ACCInf.byte(2) = 0x00;
+    Msg_BSI_ACCInf.byte(3) = 0x00;
+    Msg_BSI_ACCInf.byte(4) = 0x03;
+    Msg_BSI_ACCInf.byte(5) = 0x00;
+    Msg_BSI_ACCInf.byte(6) = 0x00;
+    Msg_BSI_ACCInf.byte(7) = 0x00;
+
+    output(Msg_BSI_ACCInf);
+}
+/*@@end*/
+
+/*@@caplFunc:Trans_Msg_BSI_VCI():*///function
+void Trans_Msg_BSI_VCI(void)
+{
+    Msg_BSI_VCI.DLC = 0x03;
+    Msg_BSI_VCI.byte(0) = VCIInf.VCIByte0;
+    Msg_BSI_VCI.byte(1) = VCIInf.VCIByte1;
+    Msg_BSI_VCI.byte(2) = VCIInf.VCIByte2;
+
+    output(Msg_BSI_VCI);
+
+    VCIInf.VCIByte0 = 0x00;
+}
+/*@@end*/
+
+/*@@key:'w':*/
+on key 'w'
+{
+
+    VCIInf.VCIByte0 = 0x04;
+
+}
+/*@@end*/
+
+/*@@key:'e':*/
+on key 'e'
+{
+    VCIInf.VCIByte0 = 0x08;
+}
+/*@@end*/
+

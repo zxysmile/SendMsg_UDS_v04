@@ -1,0 +1,854 @@
+/*@@var:*/
+variables
+{
+    mstimer Timer01;
+    message 0x122   simKB_msg_ID;
+    message 0x21F   simVCI_msgID;
+    message 0x0A2   simCSV_msgID;
+
+
+    dword   ms1_time_cnt;
+    dword   ms1Time_FMUX;
+    dword   ms1Time_VCI;
+    dword   ms1Time_CSV;
+
+    byte    KB_PWR_Flag;    
+    byte    VCI_PWR_Flag;
+    byte    CSV_PWR_Flag;
+
+
+    const dword VCI_Offset = 10;
+    const dword CSV_Offset = 80;
+}
+/*@@end*/
+
+/*@@preStart:PreStart:*/
+on preStart
+{
+}
+/*@@end*/
+
+/*@@startStart:Start:*/
+on start
+{
+
+     settimer(Timer01,50);
+
+}
+/*@@end*/
+
+/*@@stop:StopMeasurement:*/
+on stopMeasurement
+{
+}
+/*@@end*/
+
+/*@@timer:Timer01:*/
+on timer Timer01
+{
+    ms1_time_cnt++;
+
+    /* FMUX  0x122  period = 200ms */
+    if(KB_PWR_Flag == 1)
+    {
+        ms1Time_FMUX--;
+        if(ms1Time_FMUX == 0)
+        {   
+            ms1Time_FMUX = 200;
+            output(simKB_msg_ID);
+        }
+    }
+    
+    
+    /* BSI VCI 0x21F  period = 100  offset = 10 */
+    if(VCI_PWR_Flag == 1)
+    { 
+        ms1Time_VCI--; 
+        if(ms1Time_VCI == 0)
+        {
+            ms1Time_VCI = 100;                
+            output(simVCI_msgID);
+        }
+    }
+    
+    /* BSI CSV 0x0A2  period = 100  offset = 80 */
+    /* maybe this node send VCI and CSV frame, so we will do it*/
+    if(CSV_PWR_Flag == 1)
+    {
+        ms1Time_VCI--; 
+        ms1Time_CSV--;
+
+        if(ms1Time_VCI == 0)
+        {
+            ms1Time_VCI = 100;                
+            output(simVCI_msgID);
+        }
+        if(ms1Time_CSV == 0)
+        {
+            ms1Time_CSV = 100;
+            output(simCSV_msgID);
+        }
+    }
+    
+
+    /* system clock */
+    settimer(Timer01, 1);
+}
+
+
+
+
+/*@@end*/
+
+/*@@envVar:Env_EK_1SP:*/
+on envVar Env_EK_1SP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_1SP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_1SP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_1SP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_2SP:*/
+on envVar Env_EK_2SP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_2SP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_2SP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_2SP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_KB_PWR_ON:*/
+on envVar Env_KB_PWR_ON
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_KB_PWR_ON);
+
+    if(temp_val == 1)
+    {
+        if(KB_PWR_Flag == 1)
+        {
+            KB_PWR_Flag = 0;
+            putvalue(Env_KB_PWR_ON_Display, 0);
+        }
+        else
+        {
+            KB_PWR_Flag = 1;
+            putvalue(Env_KB_PWR_ON_Display, 1);
+            
+
+            ms1Time_FMUX = 100;
+            putvalue(Env_KB_VOL_UP_Down, 0);
+        }
+    }
+
+    
+}
+/*@@end*/
+
+/*@@envVar:Env_KB_VOL_UP_Down:*/
+on envVar Env_KB_VOL_UP_Down
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_KB_VOL_UP_Down);
+    putvalue(Env_KB_VOL_UP_Down_Display, temp_val);
+
+    simKB_msg_ID.Signal_EK_Vol_UpDown_SP = temp_val;
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_3SP:*/
+on envVar Env_EK_3SP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_3SP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_3SP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_3SP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_4SP:*/
+on envVar Env_EK_4SP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_4SP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_4SP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_4SP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_5SP:*/
+on envVar Env_EK_5SP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_5SP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_5SP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_5SP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_6SP:*/
+on envVar Env_EK_6SP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_6SP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_6SP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_6SP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_ModeSP:*/
+on envVar Env_EK_ModeSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_ModeSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_ModeSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_ModeSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_MuteSP:*/
+on envVar Env_EK_MuteSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_MuteSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_MuteSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_MuteSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_ListSP:*/
+on envVar Env_EK_ListSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_ListSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_ListSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_ListSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_SourceSP:*/
+on envVar Env_EK_SourceSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_SourceSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_SourceSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_SourceSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_MusicSP:*/
+on envVar Env_EK_MusicSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_MusicSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_MusicSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_MusicSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_TuneUpSP:*/
+on envVar Env_EK_TuneUpSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_TuneUpSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_TuneUpSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_TuneUpSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_TuneDownSP:*/
+on envVar Env_EK_TuneDownSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_TuneDownSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_TuneDownSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_TuneDownSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_EnterSP:*/
+on envVar Env_EK_EnterSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_EnterSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_EnterSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_EnterSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_SeekUpSP:*/
+on envVar Env_EK_SeekUpSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_SeekUpSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_SeekUpSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_SeekUpSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_SeekDownSP:*/
+on envVar Env_EK_SeekDownSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_SeekDownSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_SeekDownSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_SeekDownSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_EjectSP:*/
+on envVar Env_EK_EjectSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_EjectSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_EjectSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_EjectSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_EscSP:*/
+on envVar Env_EK_EscSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_EscSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_EscSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_EscSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_BandSP:*/
+on envVar Env_EK_BandSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_BandSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_BandSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_BandSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_MenuSP:*/
+on envVar Env_EK_MenuSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_MenuSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_MenuSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_MenuSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_EK_DarkSP:*/
+on envVar Env_EK_DarkSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_EK_DarkSP);
+    
+    if(temp_val)
+    {
+        simKB_msg_ID.Signal_EK_DarkSP = 1;    
+    }
+    else
+    {
+        simKB_msg_ID.Signal_EK_DarkSP = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_VCI_PWR_ON:*/
+on envVar Env_VCI_PWR_ON
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_VCI_PWR_ON);
+
+    if(temp_val == 1)
+    {
+        if(VCI_PWR_Flag == 1)
+        {
+            VCI_PWR_Flag = 0;
+            putvalue(Env_VCI_PWR_ON_Display, 0);
+        }
+        else
+        {
+            VCI_PWR_Flag = 1;
+            putvalue(Env_VCI_PWR_ON_Display, 1);
+
+            CSV_PWR_Flag = 0;
+            putvalue(Env_CSV_PWR_ON_Display, 0);
+            ms1Time_VCI = (VCI_Offset + 100);
+            ms1Time_CSV = (CSV_Offset + 100);
+            putvalue(Env_VCI_SCAN, 0);
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_CSV_PWR_ON:*/
+on envVar Env_CSV_PWR_ON
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_CSV_PWR_ON);
+
+    if(temp_val == 1)
+    {
+        if(CSV_PWR_Flag == 1)
+        {
+            CSV_PWR_Flag = 0;
+            putvalue(Env_CSV_PWR_ON_Display, 0);
+        }
+        else
+        {
+            CSV_PWR_Flag = 1;
+            putvalue(Env_CSV_PWR_ON_Display, 1);
+
+            VCI_PWR_Flag = 0;
+            putvalue(Env_VCI_PWR_ON_Display, 0);
+            ms1Time_VCI = (VCI_Offset + 100);
+            ms1Time_CSV = (CSV_Offset + 100);
+            putvalue(Env_CSV_VOL_UP_Down, 0);
+            putvalue(Env_CSV_SEEK, 0);
+        }
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_VCI_SCAN:*/
+on envVar Env_VCI_SCAN
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_VCI_SCAN);
+    putvalue(Env_VCI_SCAN_Display, temp_val);
+
+    simVCI_msgID.CMPT_MOL_ET_HDC = temp_val;
+}
+/*@@end*/
+
+/*@@envVar:Env_VCI_SeekUpSP:*/
+on envVar Env_VCI_SeekUpSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_VCI_SeekUpSP);
+    
+    if(temp_val)
+    {
+        simVCI_msgID.SEEK_UP_ET_HDC = 1;    
+    }
+    else
+    {
+        simVCI_msgID.SEEK_UP_ET_HDC = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_VCI_SeekDownSP:*/
+on envVar Env_VCI_SeekDownSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_VCI_SeekDownSP);
+    
+    if(temp_val)
+    {
+        simVCI_msgID.SEEK_DWN_ET_HDC = 1;    
+    }
+    else
+    {
+        simVCI_msgID.SEEK_DWN_ET_HDC = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_VCI_SourceSP:*/
+on envVar Env_VCI_SourceSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_VCI_SourceSP);
+    
+    if(temp_val)
+    {
+        simVCI_msgID.MODE_TELEPH_ET_HDC = 1;    
+    }
+    else
+    {
+        simVCI_msgID.MODE_TELEPH_ET_HDC = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_VCI_VolUpSP:*/
+on envVar Env_VCI_VolUpSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_VCI_VolUpSP);
+    
+    if(temp_val)
+    {
+        simVCI_msgID.VOLUME_UP_ET_HDC = 1;    
+    }
+    else
+    {
+        simVCI_msgID.VOLUME_UP_ET_HDC = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_VCI_VolDownSP:*/
+on envVar Env_VCI_VolDownSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_VCI_VolDownSP);
+    
+    if(temp_val)
+    {
+        simVCI_msgID.VOLUME_DWN_ET_HDC = 1;    
+    }
+    else
+    {
+        simVCI_msgID.VOLUME_DWN_ET_HDC = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_VCI_MuteSP:*/
+on envVar Env_VCI_MuteSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_VCI_MuteSP);
+    
+    if(temp_val)
+    {
+        simVCI_msgID.VOLUME_UP_ET_HDC = 1; 
+        simVCI_msgID.VOLUME_DWN_ET_HDC = 1;    
+    }
+    else
+    {
+        simVCI_msgID.VOLUME_UP_ET_HDC = 0; 
+        simVCI_msgID.VOLUME_DWN_ET_HDC = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_CSV_SEEK:*/
+on envVar Env_CSV_SEEK
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_CSV_SEEK);
+    putvalue(Env_CSV_SEEK_Display, temp_val);
+
+    simCSV_msgID.CMPT_NAV_MENU_VMF = temp_val;
+}
+/*@@end*/
+
+/*@@envVar:Env_CSV_VOL_UP_Down:*/
+on envVar Env_CSV_VOL_UP_Down
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_CSV_VOL_UP_Down);
+    putvalue(Env_CSV_VOL_UP_Down_Display, temp_val);
+
+    simCSV_msgID.CMPT_VOL_VCI = temp_val;
+}
+/*@@end*/
+
+/*@@envVar:Env_CSV_MuteSP:*/
+on envVar Env_CSV_MuteSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_CSV_MuteSP);
+    
+    if(temp_val)
+    {
+        simVCI_msgID.VOLUME_UP_ET_HDC = 1; 
+        simVCI_msgID.VOLUME_DWN_ET_HDC = 1;    
+    }
+    else
+    {
+        simVCI_msgID.VOLUME_UP_ET_HDC = 0; 
+        simVCI_msgID.VOLUME_DWN_ET_HDC = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_CSV_ModeSP:*/
+on envVar Env_CSV_ModeSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_CSV_ModeSP);
+    
+    if(temp_val)
+    {
+        simCSV_msgID.MODE_ET_VMF = 1;    
+    }
+    else
+    {
+        simCSV_msgID.MODE_ET_VMF = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_CSV_PhoneSP:*/
+on envVar Env_CSV_PhoneSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_CSV_PhoneSP);
+    
+    if(temp_val)
+    {
+        simCSV_msgID.CDE_TEL_KML = 1;    
+    }
+    else
+    {
+        simCSV_msgID.CDE_TEL_KML = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_CSV_EscSP:*/
+on envVar Env_CSV_EscSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_CSV_EscSP);
+    
+    if(temp_val)
+    {
+        simCSV_msgID.ESCAPE_ET_VMF = 1;    
+    }
+    else
+    {
+        simCSV_msgID.ESCAPE_ET_VMF = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_CSV_EnterSP:*/
+on envVar Env_CSV_EnterSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_CSV_EnterSP);
+    
+    if(temp_val)
+    {
+        simCSV_msgID.VALID_ET_VMF = 1;    
+    }
+    else
+    {
+        simCSV_msgID.VALID_ET_VMF = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_CSV_SourceSP:*/
+on envVar Env_CSV_SourceSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_CSV_SourceSP);
+    
+    if(temp_val)
+    {
+        simVCI_msgID.MODE_TELEPH_ET_HDC = 1;    
+    }
+    else
+    {
+        simVCI_msgID.MODE_TELEPH_ET_HDC = 0;
+    }
+}
+/*@@end*/
+
+/*@@envVar:Env_CSV_ListSP:*/
+on envVar Env_CSV_ListSP
+{
+    byte temp_val;
+
+    temp_val = getvalue(Env_CSV_ListSP);
+    
+    if(temp_val)
+    {
+        simVCI_msgID.LIST_ET_HDC = 1;    
+    }
+    else
+    {
+        simVCI_msgID.LIST_ET_HDC = 0;
+    }
+}
+/*@@end*/
+

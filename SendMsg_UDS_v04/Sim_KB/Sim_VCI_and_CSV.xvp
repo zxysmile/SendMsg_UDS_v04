@@ -1,0 +1,396 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls">
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl3" Children="Controls">
+      <Property Name="Name">TextBoxControl3</Property>
+      <Property Name="Size">168, 22</Property>
+      <Property Name="Location">72, 385</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Double</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">46</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl3" Children="Controls">
+      <Property Name="Name">TrackBarControl3</Property>
+      <Property Name="Size">168, 33</Property>
+      <Property Name="Location">72, 413</Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">45</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl9" Children="Controls">
+      <Property Name="Name">StaticTextControl9</Property>
+      <Property Name="Size">60, 30</Property>
+      <Property Name="Location">496, 146</Property>
+      <Property Name="Font">SimSun, 10pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">Source</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl8" Children="Controls">
+      <Property Name="Name">StaticTextControl8</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">496, 102</Property>
+      <Property Name="Font">SimSun, 10pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">Enter</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl7" Children="Controls">
+      <Property Name="Name">StaticTextControl7</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">496, 57</Property>
+      <Property Name="Font">SimSun, 10pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">Mute</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl6" Children="Controls">
+      <Property Name="Name">StaticTextControl6</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">388, 146</Property>
+      <Property Name="Font">SimSun, 10pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">List</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl5" Children="Controls">
+      <Property Name="Name">StaticTextControl5</Property>
+      <Property Name="Size">67, 30</Property>
+      <Property Name="Location">388, 102</Property>
+      <Property Name="Font">SimSun, 10pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">Volume-</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl4" Children="Controls">
+      <Property Name="Name">StaticTextControl4</Property>
+      <Property Name="Size">79, 30</Property>
+      <Property Name="Location">388, 57</Property>
+      <Property Name="Font">SimSun, 10pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">Volume+</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl3" Children="Controls">
+      <Property Name="Name">StaticTextControl3</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">296, 146</Property>
+      <Property Name="Font">SimSun, 10pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">Mode</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl2" Children="Controls">
+      <Property Name="Name">StaticTextControl2</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">296, 102</Property>
+      <Property Name="Font">SimSun, 10pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">seek-</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl1" Children="Controls">
+      <Property Name="Name">StaticTextControl1</Property>
+      <Property Name="Size">50, 30</Property>
+      <Property Name="Location">296, 57</Property>
+      <Property Name="Font">SimSun, 10pt, style=Bold</Property>
+      <Property Name="TextAlign">MiddleLeft</Property>
+      <Property Name="Text">seek+</Property>
+      <Property Name="ForeColor">192, 0, 0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl11">
+      <Property Name="Name">SwitchControl11</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">460, 393</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">27</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl2" Children="Controls">
+      <Property Name="Name">TextBoxControl2</Property>
+      <Property Name="Size">168, 22</Property>
+      <Property Name="Location">72, 318</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Double</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">26</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl2" Children="Controls">
+      <Property Name="Name">TrackBarControl2</Property>
+      <Property Name="Size">168, 33</Property>
+      <Property Name="Location">72, 346</Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">25</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl10">
+      <Property Name="Name">SwitchControl10</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">460, 349</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">24</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl13">
+      <Property Name="Name">SwitchControl13</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">365, 304</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">21</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl15">
+      <Property Name="Name">SwitchControl15</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">365, 349</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">19</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl16">
+      <Property Name="Name">SwitchControl16</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">460, 304</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">18</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl17">
+      <Property Name="Name">SwitchControl17</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">365, 393</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">17</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl18">
+      <Property Name="Name">SwitchControl18</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">280, 393</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">16</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.RadioButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="RadioButtonControl2" Children="Controls">
+      <Property Name="Name">RadioButtonControl2</Property>
+      <Property Name="Size">104, 17</Property>
+      <Property Name="Location">153, 286</Property>
+      <Property Name="Text">Description</Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">15</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl2" Children="Controls">
+      <Property Name="Name">ButtonControl2</Property>
+      <Property Name="Size">75, 23</Property>
+      <Property Name="Location">72, 280</Property>
+      <Property Name="Text">Button</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">14</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl1" Children="Controls">
+      <Property Name="Name">TextBoxControl1</Property>
+      <Property Name="Size">75, 21</Property>
+      <Property Name="Location">72, 116</Property>
+      <Property Name="AlarmUpperTextColor">ControlText</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Double</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">ControlText</Property>
+      <Property Name="AlarmUpperFont">SimSun, 9pt</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Hide</Property>
+      <Property Name="DescriptionText">
+      </Property>
+      <Property Name="AlarmLowerFont">SimSun, 9pt</Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">13</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl1" Children="Controls">
+      <Property Name="Name">TrackBarControl1</Property>
+      <Property Name="Size">168, 33</Property>
+      <Property Name="Location">60, 143</Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">12</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl9">
+      <Property Name="Name">SwitchControl9</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">473, 102</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">10</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl8">
+      <Property Name="Name">SwitchControl8</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">473, 146</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">9</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl7">
+      <Property Name="Name">SwitchControl7</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">273, 146</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">8</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl6">
+      <Property Name="Name">SwitchControl6</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">365, 57</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">7</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl5">
+      <Property Name="Name">SwitchControl5</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">365, 146</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">6</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl4">
+      <Property Name="Name">SwitchControl4</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">365, 102</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">5</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl3">
+      <Property Name="Name">SwitchControl3</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">473, 57</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">4</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl2">
+      <Property Name="Name">SwitchControl2</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">273, 102</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">3</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl1">
+      <Property Name="Name">SwitchControl1</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">273, 57</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="ImageFile">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">2</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.RadioButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="RadioButtonControl1" Children="Controls">
+      <Property Name="Name">RadioButtonControl1</Property>
+      <Property Name="Size">23, 23</Property>
+      <Property Name="Location">153, 86</Property>
+      <Property Name="Text">
+      </Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">1</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=7.1.43.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl1" Children="Controls">
+      <Property Name="Name">ButtonControl1</Property>
+      <Property Name="Size">75, 23</Property>
+      <Property Name="Location">72, 86</Property>
+      <Property Name="Text">PWR_ON</Property>
+      <Property Name="ImageFile">Choose Image...</Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">0</Property>
+    </Object>
+    <Property Name="Name">Panel</Property>
+    <Property Name="Size">613, 496</Property>
+  </Object>
+</Panel>

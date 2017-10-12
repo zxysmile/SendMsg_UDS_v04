@@ -1,0 +1,785 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: BSI EMF AAS RD45
+VAL_TABLE_ State_of_play_mode_CD 2 "Random all" 1 "Random" 0 "Mode normal" ;
+VAL_TABLE_ Status_of_the_NEWS 4 "NEWS4" 3 "NEWS3" 2 "NEWS2" 1 "NEWS1" ;
+VAL_TABLE_ Type_of_program_listened 29 "Documentary" 28 "Folklore" 27 "Oldies" 26 "Local songs" 25 "Country" 24 "Jazz" 23 "Leisure" 22 "Travel" 21 "Open line" 20 "Religion" 19 "Society" 18 "Children" 17 "Economics" 16 "Weather" 15 "Other music" 14 "Classical music" 13 "Light classic" 12 "Songs" 11 "Rock music" 10 "Pop music" 9 "Entertainment" 8 "Sciences" 7 "Culture" 6 "Fiction" 5 "Education" 4 "Sport" 3 "Info-service" 2 "Magazine" 1 "Information" ;
+VAL_TABLE_ AF_OK_value 3 "RDS decoding on" 2 "free" 1 "Available" 0 "Unavailable" ;
+VAL_TABLE_ AF_value 1 "Requested" 0 "Not requested" ;
+VAL_TABLE_ player_state 6 "Description for the value '0x6'" 5 "Disconnected" 4 "FB" 3 "FF" 2 "Play" 1 "Pause" 0 "Stop" ;
+VAL_TABLE_ Crash_info_detected 1 "detected since last contact" 0 "not detected" ;
+VAL_TABLE_ distribution_area_for_ASA 3 "Left and Right" 2 "right" 1 "left" 0 "No beep" ;
+VAL_TABLE_ AAS_status 6 "out of service" 5 "waiting" 4 "active" 3 "trailer inhibition" 2 "driver inhibition" 1 "fault" 0 "undefined" ;
+VAL_TABLE_ Status_PressKey 1 "Pressed" 0 "Released" ;
+VAL_TABLE_ touch_status 1 "touch active" 0 "touch inactive" ;
+VAL_TABLE_ ask_refresh 2 "Description for the value '0x2'" 1 "Refresh asked" 0 "No refresh asked" ;
+VAL_TABLE_ Type_of_next_list_requested 5 "CD list" 4 "Playlist" 3 "Genre" 2 "Performer" 1 "Directory" 0 "No acess" ;
+VAL_TABLE_ Vehicle_configuration_mode 6 "APV" 5 "Show room" 4 "Client" 3 "Storage / Transport" 2 "Check" 1 "Plant" 0 "Fitting" ;
+VAL_TABLE_ Status_of_electric_network 7 "TA_SECU" 6 "TA_DEGRADE" 5 "TA_NOMINA" 4 "REDEMARRAGE" 3 "DEMARRAGE" 2 "TI_DISPO_DEM" 1 "TI_DEGRADE" 0 "TI_NOMINAL" ;
+VAL_TABLE_ Emergency_underway_call 1 "Description for the value" 0 "No emergency call" ;
+VAL_TABLE_ Type_of_the_next_list 5 "CD list" 4 "Playlist" 3 "Genre" 2 "Performer" 1 "Directory" 0 "No access" ;
+VAL_TABLE_ Status_of_the_NEWS1_CFG_option 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_TABLE_ RDM_TRK_STAT 1 "Option active" 0 "Option deactive" ;
+VAL_TABLE_ Synchronization_of_radio_ON_OFF 1 "Synchronization" 0 "No synchronization" ;
+VAL_TABLE_ Update_bit 1 "Info refreshed" 0 "Info not refreshed" ;
+VAL_TABLE_ Status_of_Hybrid_GMP 5 "Active in hybrid mode" 4 "Active in propulsion mode" 3 "Active in traction mode" 2 "Active in stop mode" 1 "Inactive" 0 "Undefined" ;
+VAL_TABLE_ ValT_NM 7 "Unused" 6 "Unused" 5 "Unused" 4 "COM_OFF" 3 "Alarm/Réveil" 2 "Standby/Mise en veille" 1 "Normal" 0 "Watch/Veille" ;
+VAL_TABLE_ ValT_Night 1 "Night state." 0 "Day state." ;
+VAL_TABLE_ ValT_ECO 1 "ECO mode requested." 0 "Non-ECO mode." ;
+VAL_TABLE_ ValT_Active 1 "Active" 0 "Non-Active" ;
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ RDTEXT_STAT : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ RDS_STAT : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ RDS_CFG_RAD : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 1632 REP_DIAG_RAD: 8 Vector__XXX
+
+BO_ 1888 REQ_DIAG_RAD: 8 Vector__XXX
+
+BO_ 871 ACK_ETAT_RAD_REP: 1 Vector__XXX
+
+BO_ 807 ACK_ETAT_RADIO_TEXTE: 1 Vector__XXX
+
+BO_ 927 ACK_ETAT_KML_TEL: 1 Vector__XXX
+
+BO_ 863 ACK_ETAT_KML_REP: 1 Vector__XXX
+
+BO_ 995 ACK_ETAT_EMF_TEL: 1 RD45
+
+BO_ 1142 ACK_EVT_DEF: 1 Vector__XXX
+ SG_ REP_UCE : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 996 ETAT_USB_REPROG: 7 RD45
+ SG_ NUMERO_DE_VERSION : 23|40@0+ (1,0) [0|1099511627775] "" Vector__XXX
+ SG_ PROGRESSION : 8|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ ETAT_MISE_A_JOUR : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 937 ETAT_MDS: 2 Vector__XXX
+ SG_ APP_URG_MDS : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ APP_DEP_MDS : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MAINTIEN_MDS : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DMD_MUTE_SUAL : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 24 ETAT_INFO_CRASH: 5 BSI
+ SG_ INFO_CRASH : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 290 ETAT_FMUX: 8 Vector__XXX
+ SG_ PUSH_43 : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_42 : 46|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_41 : 47|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_33 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_34 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_35 : 37|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_36 : 36|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_37 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_38 : 34|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_39 : 33|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_40 : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_32 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_31 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_30 : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_29 : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_28 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_27 : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_26 : 30|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_25 : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_24 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_23 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_22 : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_21 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_20 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_19 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_18 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_17 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_16 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_15 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_14 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_13 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_12 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_11 : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_10 : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_09 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_08 : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_07 : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_06 : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_05 : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_04 : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_03 : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_02 : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_01 : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_44 : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PUSH_BP : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SYNC_MOL_FAC_2 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SYNC_MOL_FAC_1 : 41|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CPT_MOL_FAC_2 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ CPT_MOL_FAC_1 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 566 DONNEES_BSI_LENTES_2: 7 BSI
+ SG_ COMPTEUR_RAZ_GCT : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ CTX_JDD : 40|5@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ CPT_TEMPOREL : 15|32@0+ (1,0) [0|429496729.3] "" Vector__XXX
+ SG_ MODE_CONFIG_VHL : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ ETAT_RESEAU_ELEC : 4|4@1+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 1504 VERSION_RAD: 8 RD45
+ SG_ DIGIT_2 : 48|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DIGIT_1 : 52|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ NUM_EDITION : 56|8@1+ (1,0) [0|254] "" Vector__XXX
+ SG_ IDENT_LOGIC : 39|16@0+ (1,0) [0|65535] "" Vector__XXX
+ SG_ VER_LOG_ANNEE : 24|8@1+ (1,0) [0|200] "" Vector__XXX
+ SG_ VER_LOG_MOIS : 16|8@1+ (1,0) [1|12] "" Vector__XXX
+ SG_ VER_LOG_JOUR : 8|8@1+ (1,0) [1|31] "" Vector__XXX
+ SG_ NUM_UCE : 0|8@1+ (1,0) [0|254] "" Vector__XXX
+
+BO_ 1312 SUPERVISION_RAD: 8 RD45
+ SG_ UCE_ABS_RAD3 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ UCE_ABS_RAD2 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ UCE_ABS_RAD1 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ C_DEFAUT_PERTE_COM : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ C_DEFAUT_BUSOFF : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ C_DEFAUT_N_AS : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ C_DEFAUT_NERR : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ ETAT_NM : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BIT_NERR : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PERTE_COM : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1056 REVEIL_RAD: 2 RD45
+ SG_ E_ON_OFF : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ REV : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 419 KML_INFO_GENERAL: 7 RD45
+ SG_ APPEL_VOC : 53|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ NIV_BAT_STREAMING : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ ACCES_LST_JUMELAGES : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACCES_REP_IMPORTS : 34|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACCES_JOURNAL : 36|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACCES_REP_TOTAL : 38|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ NIV_BAT_TELEPHONE : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ QUA_RESEAU : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ ETAT_FCT_JUM : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BLUETOOTH_DISPO : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MODE_COMBINE : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ RENVOI_APPEL : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PRES_REP_VOCALE : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SMS : 14|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ BOITE_VOC_DISPO : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ROAMING : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MODE_SECRET : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MODE_CASQUE : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ NUM_DISPO : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1184 EVENEMENT_DEFAUT_RAD: 8 RD45
+ SG_ BLOC_DIAG : 3|60@0+ (1,0) [0|1.1529215046069E+018] "" Vector__XXX
+ SG_ NUM_TRAME : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ NB_TRAME : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 293 ETAT_RAD_REP: 8 RD45
+
+BO_ 549 ETAT_RADIO_TUNER_TUN: 6 RD45
+ SG_ FORMAT : 44|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ STEREO : 33|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DEBIT : 36|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ NIV_TUN : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ FRQ_TUN : 10|11@0+ (1,0) [0|2047] "" Vector__XXX
+ SG_ BQE_TUN : 13|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ NUM_TUN : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ SRCH_TUN : 4|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 613 ETAT_RADIO_TUNER_RDS: 4 RD45
+ SG_ MPX_DISPO : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ PS_NAME_DISPO : 26|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ RDTEXT_OK : 28|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ RDTEXT : 30|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ NEWS : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ NEWS_OUT : 16|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ NEWS_OK : 19|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DABFM_OK : 21|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DABFM : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PTY_AIR : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ TA_OUT : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TA_OK : 2|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TA : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ AF_OK : 5|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ AF : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 164 ETAT_RADIO_TEXTE: 8 RD45
+
+BO_ 421 ETAT_RADIO_GEN_VOL: 1 RD45
+ SG_ NIV_VOL : 0|5@1+ (1,0) [0|30] "" Vector__XXX
+ SG_ ORIGINE_VOL : 5|3@1+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 357 ETAT_RADIO_GEN_GEN: 4 RD45
+ SG_ RADIO_NUM : 26|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ SRC_SEL : 20|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ NO_SRC : 16|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ SOURCE_KML : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SRC_MIX : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ COMP_DYN : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MISE_A_ON_RADIO : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MUTE_ACT : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ AMPLI_ON : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ POWER : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 485 ETAT_RADIO_GEN_AUD: 7 RD45
+ SG_ BT_REGL_SPATIAL : 49|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BT_REGL_SPECTRAL : 50|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ REG_AUD_IMPOSSIBLE : 51|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ REPART_ON : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ RGL_REPART : 55|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ REPART_ACT : 40|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ RGL_AMB : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TYPE_AMB : 43|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ AMB_ACT : 46|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ASS_ACT : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ASS_ON : 34|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ RGL_ASS : 35|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LOUD_ON : 36|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LOUD_ACT : 37|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ RGL_LOUD : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TREB_ACT : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ RGL_TREB : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BAS_ACT : 16|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ RGL_BAS : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ FADER_ACT : 8|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ NIV_TREB : 26|5@1- (1,0) [-7|7] "" Vector__XXX
+ SG_ NIV_BAS : 18|5@1- (1,0) [-7|7] "" Vector__XXX
+ SG_ NIV_FAD : 10|5@1- (1,0) [-7|7] "" Vector__XXX
+ SG_ RGL_FAD : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BAL_ACT : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ NIV_BAL : 2|5@1- (1,0) [-7|7] "" Vector__XXX
+ SG_ RGL_BAL : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 933 ETAT_RADIO_CD_TRK: 8 RD45
+ SG_ ALEATOIRE : 60|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ REPETITION : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ NB_PLAGES_TOTAL : 47|16@0+ (1,0) [0|65533] "" Vector__XXX
+ SG_ DONNEES_TXT_DISPO : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TYPE_LISTE_SEL : 34|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ SOURCE_CONCERNEE : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ SEC_DEBF : 24|6@1+ (1,0) [0|59] "" Vector__XXX
+ SG_ ORG_CHANG_PISTE : 30|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ NUMERO_DE_PLAGE : 7|16@0+ (1,0) [0|65535] "" Vector__XXX
+ SG_ MN_DEBF : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 805 ETAT_RADIO_CD_CD: 4 RD45
+ SG_ ERREUR_CONSO_USB : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERREUR_FILE : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERREUR_COM : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERREUR_USB : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TYPE_SRC_USB : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACCES_BT : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACCES_USB : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TYPE_DISQUE : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEMP_CD : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_DSK_CD : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERROR_CD : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DISK_ILLISIBLE : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ETAT_BT : 8|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ ETAT_USB : 11|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ ERREUR_BT_CDE : 16|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ETAT_CD : 0|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ ACCES_CD : 14|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 291 ETAT_KML_TEL: 8 RD45
+
+BO_ 355 ETAT_KML_REP: 8 RD45
+
+BO_ 547 ETAT_KML_DUREE: 8 RD45
+ SG_ SEC_APPEL_2 : 42|6@1+ (1,0) [0|63] "" Vector__XXX
+ SG_ MN_APPEL_2 : 34|6@1+ (1,0) [0|63] "" Vector__XXX
+ SG_ SEC_APPEL_1 : 18|6@1+ (1,0) [0|63] "" Vector__XXX
+ SG_ MN_APPEL_1 : 10|6@1+ (1,0) [0|63] "" Vector__XXX
+ SG_ TMP_REP_AUTO_2 : 59|5@1+ (1,0) [0|30] "" Vector__XXX
+ SG_ TMP_REP_AUTO_1 : 51|5@1+ (1,0) [0|30] "" Vector__XXX
+ SG_ HEURE_APPEL_2 : 27|5@1+ (1,0) [0|30] "" Vector__XXX
+ SG_ HEURE_APPEL_1 : 3|5@1+ (1,0) [0|30] "" Vector__XXX
+
+BO_ 611 ETAT_EMF_FC: 3 RD45
+
+BO_ 997 ETAT_CDT: 3 RD45
+ SG_ CPT_MOL_FAC_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ SYNC_MOL_FAC_2 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DMD_OUVERTURE_LISTE : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DMD_MENU_TEL : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LIST : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESCAPE : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VALID_CDT : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GAUCHE : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DROITE : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BAS : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ HAUT : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MODE_DARK : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MENU : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DMD_NEWS : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 480 CONFIG_RAD: 7 RD45
+ SG_ TYPE_PROCHAINE_LISTE : 51|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ LISTE_REPERTOIRE_CFG : 54|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ LISTE_PLAYLISTS_CFG : 40|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ LISTE_GENRE_CFG : 42|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ LISTE_ARTISTE_CFG : 44|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ NEWS4_CFG : 36|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ NEWS3_CFG : 38|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ NEWS2_CFG : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ NEWS1_CFG : 26|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DABFM_CFG : 28|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACT_NEWS4 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACT_NEWS3 : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACT_NEWS2 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACT_NEWS1 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACT_DABFM : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACT_AF : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ RDTXT : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ RDTXT_CFG : 8|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ AF_CFG : 10|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ CDTEXT : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ RDM_ALL_STAT : 12|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ RDMALL_CFG : 13|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ REP_DSK_STAT : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CDTEXT_CFG : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ REP_CFG : 3|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ RDM_TRK_STAT : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ RDM_CFG : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 162 VMF_DSGN: 6 BSI
+ SG_ CMPT_VOL_VCI : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ OVF_VOL_INF_ET_VCI : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ OVF_VOL_SUP_ET_VCI : 33|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MODE_ET_VMF : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MENU_ET_VMF : 11|1@1+ (1,0) [0|1] ""  RD45
+ SG_ OVF_NAV_SUP_ET_VMF : 15|1@1+ (1,0) [0|1] ""  RD45
+ SG_ OVF_NAV_INF_ET_VMF : 14|1@1+ (1,0) [0|1] ""  RD45
+ SG_ CDE_TEL_KML : 23|1@1+ (1,0) [0|1] ""  RD45
+ SG_ CDE_VOCALE_ET_VMF : 8|1@1+ (1,0) [0|1] ""  RD45
+ SG_ PSH_GH_ET_HDC : 9|1@1+ (1,0) [0|1] ""  RD45
+ SG_ ESCAPE_ET_VMF : 12|1@1+ (1,0) [0|1] ""  RD45
+ SG_ VALID_ET_VMF : 13|1@1+ (1,0) [0|1] ""  RD45
+ SG_ CMPT_NAV_MENU_VMF : 0|8@1- (1,0) [-128|127] ""  RD45
+
+BO_ 694 VIN_VIS: 8 BSI
+ SG_ VIS_8 : 56|8@1+ (1,0) [0|0] ""  RD45
+ SG_ VIS_7 : 48|8@1+ (1,0) [0|0] ""  RD45
+ SG_ VIS_6 : 40|8@1+ (1,0) [0|0] ""  RD45
+ SG_ VIS_5 : 32|8@1+ (1,0) [0|0] ""  RD45
+ SG_ VIS_4 : 24|8@1+ (1,0) [0|0] ""  RD45
+ SG_ VIS_3 : 16|8@1+ (1,0) [0|0] ""  RD45
+ SG_ VIS_2 : 8|8@1+ (1,0) [0|0] ""  RD45
+ SG_ VIS_1 : 0|8@1+ (1,0) [0|0] ""  RD45
+
+BO_ 950 VIN_VDS: 6 BSI
+ SG_ VDS_6 : 40|8@1+ (1,0) [0|0] ""  RD45
+ SG_ VDS_5 : 32|8@1+ (1,0) [0|0] ""  RD45
+ SG_ VDS_4 : 24|8@1+ (1,0) [0|0] ""  RD45
+ SG_ VDS_3 : 16|8@1+ (1,0) [0|0] ""  RD45
+ SG_ VDS_2 : 8|8@1+ (1,0) [0|0] ""  RD45
+ SG_ VDS_1 : 0|8@1+ (1,0) [0|0] ""  RD45
+
+BO_ 545 INFOS_GEN_ODB: 7 Vector__XXX
+ SG_ POUSSOIR_NAV : 0|1@1+ (1,0) [0|1] ""  RD45
+
+BO_ 287 ETAT_RAD_REP_FC: 3 Vector__XXX
+
+BO_ 159 ETAT_RADIO_TEXTE_FC: 3 Vector__XXX
+
+BO_ 671 ETAT_KML_TEL_FC: 3 Vector__XXX
+
+BO_ 607 ETAT_KML_REP_FC: 3 Vector__XXX
+
+BO_ 735 ETAT_EMF: 8 Vector__XXX
+
+BO_ 223 EMF_CDE_RAD: 4 EMF
+ SG_ ACT_NEWS1 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACT_NEWS2 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACT_NEWS3 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACT_NEWS4 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACT_AF : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ RDTXT : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACT_DABFM : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ RDM_TRK_STAT : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ RDM_ALL_STAT : 30|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ REP_DSK_STAT : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CDTEXT : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MODIF_EN_COURS : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DMD_REFRESH_LIST : 27|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TYPE_PROCH_LISTE_DEM : 10|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DMD_LIST : 0|4@1- (1,0) [0|15] "" Vector__XXX
+ SG_ TYPE_BLOCS : 13|3@1+ (1,0) [0|3] ""  RD45
+ SG_ ORG_GESTION_DESIGNATEUR : 6|2@1+ (1,0) [0|3] ""  RD45
+
+BO_ 182 DONNEES_BSI_RAPIDES: 8 BSI
+ SG_ SECU_VITV : 63|1@1+ (1,0) [0|1] ""  RD45
+ SG_ VITV : 23|16@0+ (0.01,0) [0|655.34] "km/h"  RD45
+
+BO_ 246 DONNEES_BSI_LENTES: 8 BSI
+ SG_ KM_TOTAL : 23|24@0+ (1,0) [0|16777215] "" Vector__XXX
+ SG_ TYPE_DIR : 60|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ETAT_GMP : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ MDE_CFG : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ETAT_PRINCIP_SEV : 3|2@1+ (1,0) [0|3] ""  RD45
+
+BO_ 225 DONNEES_AAS: 7 AAS
+ SG_ DELAI_BEEP : 16|6@1+ (1,0) [0|496] "" Vector__XXX
+ SG_ DUREE_BEEP : 22|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DMDE_AUDIO : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LOCALISATION_AAS : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ REPART_AAS : 14|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ETAT_AAS_AV : 2|3@1+ (1,0) [0|6] "" Vector__XXX
+ SG_ ETAT_AAS_AR : 5|3@1+ (1,0) [0|6] "" Vector__XXX
+
+BO_ 479 DEMANDES_EMF_TEL: 4 EMF
+ SG_ TYPE_LIST_CONNEX : 28|1@1+ (1,0) [0|1] ""  RD45
+ SG_ DMD_SCAN_BT : 29|2@1+ (1,0) [0|3] ""  RD45
+ SG_ SUPP_JUM : 16|2@1+ (1,0) [0|3] ""  RD45
+ SG_ ECRASER_JUM : 18|2@1+ (1,0) [0|3] ""  RD45
+ SG_ ACCEP_JUM : 20|2@1+ (1,0) [0|3] ""  RD45
+ SG_ DMD_LST_JUM : 22|2@1+ (1,0) [0|3] ""  RD45
+ SG_ DMD_MODE_SECRET : 11|1@1+ (1,0) [0|1] ""  RD45
+ SG_ REP_APPEL_ENTRANT : 12|2@1+ (1,0) [0|2] ""  RD45
+ SG_ GERER_COM : 14|2@1+ (1,0) [0|3] ""  RD45
+ SG_ ORIGINE_DMD_LIST : 1|2@1+ (1,0) [0|3] ""  RD45
+ SG_ ACCES_TRI : 3|3@1+ (1,0) [0|7] ""  RD45
+ SG_ ACCES_REP : 6|2@1+ (1,0) [0|3] ""  RD45
+
+BO_ 359 DEMANDES_EMF: 8 EMF
+ SG_ APP_URG : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 54 COMMANDES_BSI: 8 BSI
+ SG_ SYNC_ON_OFF_RAD : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ON_OFF_RAD : 49|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UB_ETAT_GMP_HY : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ETAT_GMP_HY : 45|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ INVIOLABILITE_AUDIO : 57|1@1+ (1,0) [0|1] ""  RD45
+ SG_ PHASE_VIE : 32|3@1+ (1,0) [0|7] ""  RD45
+ SG_ INTERD_MEMO_DEF : 35|1@1+ (1,0) [0|1] ""  RD45
+ SG_ DIAG_MUX_ON : 37|1@1+ (1,0) [0|1] ""  RD45
+ SG_ DEM_EFFAC_DEF : 38|1@1+ (1,0) [0|1] ""  RD45
+ SG_ LUMINOSITE : 24|4@1+ (1,0) [0|15] ""  RD45
+ SG_ ETAT_JN : 29|1@1+ (1,0) [0|1] ""  RD45
+
+BO_ 543 CDE_RADIO: 3 BSI
+ SG_ SOURCE_HDC : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VALID_CDE_RADIO : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMPT_MOL_ET_HDC : 8|8@1- (1,0) [-128|127] ""  RD45
+ SG_ SEEK_UP_ET_HDC : 7|1@1+ (1,0) [0|1] ""  RD45
+ SG_ SEEK_DWN_ET_HDC : 6|1@1+ (1,0) [0|1] ""  RD45
+ SG_ OVF_SCAN_UP_ET_HDC : 5|1@1+ (1,0) [0|1] ""  RD45
+ SG_ OVF_SCAN_DWN_ET_HDC : 4|1@1+ (1,0) [0|1] ""  RD45
+ SG_ VOLUME_UP_ET_HDC : 3|1@1+ (1,0) [0|1] ""  RD45
+ SG_ VOLUME_DWN_ET_HDC : 2|1@1+ (1,0) [0|1] ""  RD45
+ SG_ MODE_TELEPH_ET_HDC : 1|1@1+ (1,0) [0|1] ""  RD45
+ SG_ LIST_ET_HDC : 0|1@1+ (1,0) [0|1] ""  RD45
+
+
+
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ SG_ 3221225472 RDTEXT_STAT "State of Radio-Text mode";
+CM_ SG_ 3221225472 RDS_STAT "RDS tracking state";
+CM_ SG_ 3221225472 RDS_CFG_RAD "RDS tracking, Code Item=0x01";
+CM_ BO_ 419 "变长";
+CM_ BO_ 293 "变长";
+CM_ BO_ 164 "变长";
+CM_ BO_ 355 "变长";
+CM_ BO_ 480 "Modification of parameter.";
+CM_ SG_ 480 LISTE_REPERTOIRE_CFG "Overall shuffle mode (random all), Code Item = 0x45";
+CM_ SG_ 480 LISTE_PLAYLISTS_CFG "Overall shuffle mode (random all), Code Item = 0x45";
+CM_ SG_ 480 LISTE_GENRE_CFG "Overall shuffle mode (random all), Code Item = 0x45";
+CM_ SG_ 480 LISTE_ARTISTE_CFG "Overall shuffle mode (random all), Code Item = 0x45";
+CM_ SG_ 480 NEWS4_CFG "Overall shuffle mode (random all), Code Item = 0x45";
+CM_ SG_ 480 NEWS3_CFG "Overall shuffle mode (random all), Code Item = 0x45";
+CM_ SG_ 480 NEWS2_CFG "Overall shuffle mode (random all), Code Item = 0x45";
+CM_ SG_ 480 NEWS1_CFG "Overall shuffle mode (random all), Code Item = 0x45";
+CM_ SG_ 480 DABFM_CFG "Overall shuffle mode (random all), Code Item = 0x45";
+CM_ SG_ 480 ACT_NEWS4 "State of activation of disk/directory repetition mode";
+CM_ SG_ 480 ACT_NEWS3 "State of activation of disk/directory repetition mode";
+CM_ SG_ 480 ACT_NEWS2 "State of activation of disk/directory repetition mode";
+CM_ SG_ 480 ACT_NEWS1 "State of activation of disk/directory repetition mode";
+CM_ SG_ 480 ACT_DABFM "State of activation of disk/directory repetition mode";
+CM_ SG_ 480 ACT_AF "State of activation of disk/directory repetition mode";
+CM_ SG_ 480 RDTXT "State of activation of disk/directory repetition mode";
+CM_ SG_ 480 RDTXT_CFG "Overall shuffle mode (random all), Code Item = 0x45";
+CM_ SG_ 480 AF_CFG "Overall shuffle mode (random all), Code Item = 0x45";
+CM_ SG_ 480 CDTEXT "State of activation of disk/directory repetition mode";
+CM_ SG_ 480 RDM_ALL_STAT "Activation status of Overall shuffle mode";
+CM_ SG_ 480 RDMALL_CFG "Overall shuffle mode (random all), Code Item = 0x45";
+CM_ SG_ 480 REP_DSK_STAT "State of activation of disk/directory repetition mode";
+CM_ SG_ 480 CDTEXT_CFG "Disk repetition mode, Code Item=0x43";
+CM_ SG_ 480 REP_CFG "Shuffle mode of tracks, Code Item=0x42";
+CM_ SG_ 480 RDM_TRK_STAT "Activation status of IntroScan reading mode";
+CM_ SG_ 480 RDM_CFG "Intro Scan reading mode. Code Item=0x41";
+CM_ BO_ 162 "This frame is consumed by the Radio, CMB, EMF, BTEL, and therefore must take the fast BSI gateway
+变长";
+CM_ SG_ 162 CMPT_VOL_VCI "Designator validation key";
+CM_ SG_ 162 OVF_VOL_INF_ET_VCI "Designator validation key";
+CM_ SG_ 162 OVF_VOL_SUP_ET_VCI "Designator validation key";
+CM_ SG_ 162 MODE_ET_VMF "Designator validation key";
+CM_ SG_ 162 MENU_ET_VMF "Validation key designating the CMB";
+CM_ SG_ 162 OVF_NAV_SUP_ET_VMF "Overflow lower than the navigation thumbwheel of the CMB";
+CM_ SG_ 162 OVF_NAV_INF_ET_VMF "Overflow higher than the navigation thumbwheel of the CMB";
+CM_ SG_ 162 CDE_TEL_KML "Access to telephone directory";
+CM_ SG_ 162 CDE_VOCALE_ET_VMF "Voice command";
+CM_ SG_ 162 PSH_GH_ET_HDC "Left Push";
+CM_ SG_ 162 ESCAPE_ET_VMF "Designating escape key";
+CM_ SG_ 162 VALID_ET_VMF "Designator validation key";
+CM_ BO_ 694 "VIS = Vehicule Indicator Section, VIN field that distinguishes a vehicle from another.";
+CM_ BO_ 950 "VDS = Vehicule Description Sector, VIN field of description of the general characteristics of the vehicle.";
+CM_ BO_ 545 "On status change of the following parameters: CONSO_ODB, AUTON_ODB, POUSSOIR_ODB, POUSSOIR_NAV
+
+Status of OBD";
+CM_ SG_ 545 POUSSOIR_NAV "State of navigation / voice rec. message reminder push- button";
+CM_ BO_ 735 "The data contained in DATA_CF_ETAT_EMF are detailed in the structure of message ETAT_EMF_CODE_JUM
+变长";
+CM_ BO_ 223 "变长";
+CM_ SG_ 223 ACT_NEWS1 "State of activation of disk/directory repetition mode";
+CM_ SG_ 223 ACT_NEWS2 "State of activation of disk/directory repetition mode";
+CM_ SG_ 223 ACT_NEWS3 "State of activation of disk/directory repetition mode";
+CM_ SG_ 223 ACT_NEWS4 "State of activation of disk/directory repetition mode";
+CM_ SG_ 223 ACT_AF "State of activation of disk/directory repetition mode";
+CM_ SG_ 223 RDTXT "State of activation of disk/directory repetition mode";
+CM_ SG_ 223 ACT_DABFM "State of activation of disk/directory repetition mode";
+CM_ SG_ 223 RDM_TRK_STAT "State of activation of disk/directory repetition mode";
+CM_ SG_ 223 RDM_ALL_STAT "State of activation of disk/directory repetition mode";
+CM_ SG_ 223 REP_DSK_STAT "State of activation of disk/directory repetition mode";
+CM_ SG_ 223 CDTEXT "State of activation of disk/directory repetition mode";
+CM_ SG_ 223 MODIF_EN_COURS "State of activation of disk/directory repetition mode";
+CM_ SG_ 223 TYPE_BLOCS "Type of blocks to be processed by the body managing the designator push buttons";
+CM_ SG_ 223 ORG_GESTION_DESIGNATEUR "Device managing the push buttons of the designator";
+CM_ BO_ 182 "变长";
+CM_ SG_ 182 SECU_VITV "Vehicle speed info securization";
+CM_ SG_ 182 VITV "Instantaneous vehicle speed";
+CM_ SG_ 246 ETAT_PRINCIP_SEV "SEV (Vehicle Electrical System) main state";
+CM_ BO_ 479 "变长";
+CM_ SG_ 479 TYPE_LIST_CONNEX "BT devices type to Connect / Disconnect";
+CM_ SG_ 479 DMD_SCAN_BT "Request for BT device research";
+CM_ SG_ 479 SUPP_JUM "Elimination of the paired mobile";
+CM_ SG_ 479 ECRASER_JUM "Overwrite the mobile memorized";
+CM_ SG_ 479 ACCEP_JUM "Accepting the pairing request in progress";
+CM_ SG_ 479 DMD_LST_JUM "Request for paired phones list";
+CM_ SG_ 479 DMD_MODE_SECRET "Request for secret mode";
+CM_ SG_ 479 REP_APPEL_ENTRANT "Answering an incoming call";
+CM_ SG_ 479 GERER_COM "Manage the state of communication";
+CM_ SG_ 479 ORIGINE_DMD_LIST "Origin of the request to open list";
+CM_ SG_ 479 ACCES_TRI "Access request to the classifications of USB or BT source";
+CM_ SG_ 479 ACCES_REP "Access to directories";
+CM_ BO_ 54 "Power management
+Management of brightness
+Network Status
+Securing";
+CM_ SG_ 54 INVIOLABILITE_AUDIO "Audio inviolability";
+CM_ SG_ 54 PHASE_VIE "Network life phase";
+CM_ SG_ 54 INTERD_MEMO_DEF "Faults storage locking
+The operation parameter INTERD_MEMO_DEF is detailed in the document [JDD]";
+CM_ SG_ 54 DIAG_MUX_ON "Authorization for network supervision
+The operation parameter DIAG_MUX_ON is detailed in the document [Rules COM]";
+CM_ SG_ 54 DEM_EFFAC_DEF "Global deletion of defects
+The operation parameter DEM_EFFAC_DEF is detailed in the document [JDD]";
+CM_ SG_ 54 LUMINOSITE "Brightness level to be applied";
+CM_ SG_ 54 ETAT_JN "Day/Night state";
+CM_ BO_ 543 "This frame, produced by the Top of Column on the Body network, is transmitted over the Comfort network through the BSI gateway.";
+CM_ SG_ 543 SOURCE_HDC "Mode / Telephone";
+CM_ SG_ 543 VALID_CDE_RADIO "Mode / Telephone";
+CM_ SG_ 543 CMPT_MOL_ET_HDC "SCAN thumbwheel counter. Indicates the number of steps from -128 to +127 of the thumbwheel.";
+CM_ SG_ 543 SEEK_UP_ET_HDC "Forward search";
+CM_ SG_ 543 SEEK_DWN_ET_HDC "Downward search";
+CM_ SG_ 543 OVF_SCAN_UP_ET_HDC "Overflow Scan +";
+CM_ SG_ 543 OVF_SCAN_DWN_ET_HDC "Overflow Scan -";
+CM_ SG_ 543 VOLUME_UP_ET_HDC "Volume +";
+CM_ SG_ 543 VOLUME_DWN_ET_HDC "Volume -";
+CM_ SG_ 543 MODE_TELEPH_ET_HDC "Mode / Telephone";
+CM_ SG_ 543 LIST_ET_HDC "List key";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BU_  "CANoeJitterMax" INT 0 0;
+BA_DEF_ BU_  "CANoeJitterMin" INT 0 0;
+BA_DEF_ BU_  "CANoeDrift" INT 0 0;
+BA_DEF_ BU_  "CANoeStartDelay" INT 0 0;
+BA_DEF_DEF_  "BusType" "";
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "CANoeJitterMax" 0;
+BA_DEF_DEF_  "CANoeJitterMin" 0;
+BA_DEF_DEF_  "CANoeDrift" 0;
+BA_DEF_DEF_  "CANoeStartDelay" 0;
+VAL_ 3221225472 RDTEXT_STAT 1 "Active" 0 "Non-Active" ;
+VAL_ 3221225472 RDS_STAT 1 "Active" 0 "Non-Active" ;
+VAL_ 24 INFO_CRASH 1 "detected since last contact" 0 "not detected" ;
+VAL_ 290 PUSH_43 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_42 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_41 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_33 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_34 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_35 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_36 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_37 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_38 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_39 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_40 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_32 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_31 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_30 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_29 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_28 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_27 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_26 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_25 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_24 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_23 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_22 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_21 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_20 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_19 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_18 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_17 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_16 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_15 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_14 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_13 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_12 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_11 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_10 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_09 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_08 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_07 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_06 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_05 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_04 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_03 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_02 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_01 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_44 1 "Pressed" 0 "Released" ;
+VAL_ 290 PUSH_BP 1 "Pressed" 0 "Released" ;
+VAL_ 566 MODE_CONFIG_VHL 6 "APV" 5 "Show room" 4 "Client" 3 "Storage / Transport" 2 "Check" 1 "Plant" 0 "Fitting" ;
+VAL_ 566 ETAT_RESEAU_ELEC 7 "TA_SECU" 6 "TA_DEGRADE" 5 "TA_NOMINA" 4 "REDEMARRAGE" 3 "DEMARRAGE" 2 "TI_DISPO_DEM" 1 "TI_DEGRADE" 0 "TI_NOMINAL" ;
+VAL_ 613 RDTEXT_OK 3 "RDS decoding on" 2 "free" 1 "Available" 0 "Unavailable" ;
+VAL_ 613 RDTEXT 1 "Requested" 0 "Not requested" ;
+VAL_ 613 NEWS 1 "Requested" 0 "Not requested" ;
+VAL_ 613 NEWS_OUT 4 "NEWS4" 3 "NEWS3" 2 "NEWS2" 1 "NEWS1" ;
+VAL_ 613 NEWS_OK 3 "RDS decoding on" 2 "free" 1 "Available" 0 "Unavailable" ;
+VAL_ 613 DABFM_OK 3 "RDS decoding on" 2 "free" 1 "Available" 0 "Unavailable" ;
+VAL_ 613 DABFM 1 "Requested" 0 "Not requested" ;
+VAL_ 613 PTY_AIR 29 "Documentary" 28 "Folklore" 27 "Oldies" 26 "Local songs" 25 "Country" 24 "Jazz" 23 "Leisure" 22 "Travel" 21 "Open line" 20 "Religion" 19 "Society" 18 "Children" 17 "Economics" 16 "Weather" 15 "Other music" 14 "Classical music" 13 "Light classic" 12 "Songs" 11 "Rock music" 10 "Pop music" 9 "Entertainment" 8 "Sciences" 7 "Culture" 6 "Fiction" 5 "Education" 4 "Sport" 3 "Info-service" 2 "Magazine" 1 "Information" ;
+VAL_ 613 TA_OK 3 "RDS decoding on" 2 "free" 1 "Available" 0 "Unavailable" ;
+VAL_ 613 TA 1 "Requested" 0 "Not requested" ;
+VAL_ 613 AF_OK 3 "RDS decoding on" 2 "free" 1 "Available" 0 "Unavailable" ;
+VAL_ 613 AF 1 "Requested" 0 "Not requested" ;
+VAL_ 933 ALEATOIRE 2 "Random all" 1 "Random" 0 "Mode normal" ;
+VAL_ 805 ETAT_BT 6 "Description for the value '0x6'" 5 "Disconnected" 4 "FB" 3 "FF" 2 "Play" 1 "Pause" 0 "Stop" ;
+VAL_ 805 ETAT_USB 6 "Description for the value '0x6'" 5 "Disconnected" 4 "FB" 3 "FF" 2 "Play" 1 "Pause" 0 "Stop" ;
+VAL_ 997 LIST 1 "touch active" 0 "touch inactive" ;
+VAL_ 997 ESCAPE 1 "touch active" 0 "touch inactive" ;
+VAL_ 997 VALID_CDT 1 "touch active" 0 "touch inactive" ;
+VAL_ 997 GAUCHE 1 "touch active" 0 "touch inactive" ;
+VAL_ 997 DROITE 1 "touch active" 0 "touch inactive" ;
+VAL_ 997 BAS 1 "touch active" 0 "touch inactive" ;
+VAL_ 997 HAUT 1 "touch active" 0 "touch inactive" ;
+VAL_ 997 MODE_DARK 1 "touch active" 0 "touch inactive" ;
+VAL_ 997 MENU 1 "touch active" 0 "touch inactive" ;
+VAL_ 480 TYPE_PROCHAINE_LISTE 5 "CD list" 4 "Playlist" 3 "Genre" 2 "Performer" 1 "Directory" 0 "No access" ;
+VAL_ 480 LISTE_REPERTOIRE_CFG 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_ 480 LISTE_PLAYLISTS_CFG 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_ 480 LISTE_GENRE_CFG 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_ 480 LISTE_ARTISTE_CFG 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_ 480 NEWS4_CFG 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_ 480 NEWS3_CFG 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_ 480 NEWS2_CFG 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_ 480 NEWS1_CFG 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_ 480 DABFM_CFG 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_ 480 ACT_NEWS4 1 "Active" 0 "Non-Active" ;
+VAL_ 480 ACT_NEWS3 1 "Active" 0 "Non-Active" ;
+VAL_ 480 ACT_NEWS2 1 "Active" 0 "Non-Active" ;
+VAL_ 480 ACT_NEWS1 1 "Active" 0 "Non-Active" ;
+VAL_ 480 ACT_DABFM 1 "Active" 0 "Non-Active" ;
+VAL_ 480 ACT_AF 1 "Active" 0 "Non-Active" ;
+VAL_ 480 RDTXT 1 "Active" 0 "Non-Active" ;
+VAL_ 480 RDTXT_CFG 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_ 480 AF_CFG 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_ 480 CDTEXT 1 "Active" 0 "Non-Active" ;
+VAL_ 480 RDM_ALL_STAT 1 "Active" 0 "Non-Active" ;
+VAL_ 480 RDMALL_CFG 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_ 480 REP_DSK_STAT 1 "Active" 0 "Non-Active" ;
+VAL_ 480 REP_CFG 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_ 480 RDM_TRK_STAT 1 "Option active" 0 "Option deactive" ;
+VAL_ 480 RDM_CFG 2 "Option activable" 1 "Option non activable" 0 "Option unavailable" ;
+VAL_ 162 OVF_VOL_INF_ET_VCI 1 "Active" 0 "Non-Active" ;
+VAL_ 162 OVF_VOL_SUP_ET_VCI 1 "Active" 0 "Non-Active" ;
+VAL_ 162 MODE_ET_VMF 1 "Active" 0 "Non-Active" ;
+VAL_ 162 MENU_ET_VMF 1 "Active" 0 "Non-Active" ;
+VAL_ 162 OVF_NAV_SUP_ET_VMF 1 "Active" 0 "Non-Active" ;
+VAL_ 162 OVF_NAV_INF_ET_VMF 1 "Active" 0 "Non-Active" ;
+VAL_ 162 CDE_TEL_KML 1 "Active" 0 "Non-Active" ;
+VAL_ 162 CDE_VOCALE_ET_VMF 1 "Active" 0 "Non-Active" ;
+VAL_ 162 PSH_GH_ET_HDC 1 "Active" 0 "Non-Active" ;
+VAL_ 162 ESCAPE_ET_VMF 1 "Active" 0 "Non-Active" ;
+VAL_ 162 VALID_ET_VMF 1 "Active" 0 "Non-Active" ;
+VAL_ 223 ACT_NEWS1 1 "Active" 0 "Non-Active" ;
+VAL_ 223 ACT_NEWS2 1 "Active" 0 "Non-Active" ;
+VAL_ 223 ACT_NEWS3 1 "Active" 0 "Non-Active" ;
+VAL_ 223 ACT_NEWS4 1 "Active" 0 "Non-Active" ;
+VAL_ 223 ACT_AF 1 "Active" 0 "Non-Active" ;
+VAL_ 223 RDTXT 1 "Active" 0 "Non-Active" ;
+VAL_ 223 ACT_DABFM 1 "Active" 0 "Non-Active" ;
+VAL_ 223 RDM_TRK_STAT 1 "Active" 0 "Non-Active" ;
+VAL_ 223 RDM_ALL_STAT 1 "Active" 0 "Non-Active" ;
+VAL_ 223 REP_DSK_STAT 1 "Active" 0 "Non-Active" ;
+VAL_ 223 CDTEXT 1 "Active" 0 "Non-Active" ;
+VAL_ 223 DMD_REFRESH_LIST 2 "Description for the value '0x2'" 1 "Refresh asked" 0 "No refresh asked" ;
+VAL_ 223 TYPE_PROCH_LISTE_DEM 5 "CD list" 4 "Playlist" 3 "Genre" 2 "Performer" 1 "Directory" 0 "No access" ;
+VAL_ 225 REPART_AAS 3 "Left and Right" 2 "right" 1 "left" 0 "No beep" ;
+VAL_ 225 ETAT_AAS_AV 6 "out of service" 5 "waiting" 4 "active" 3 "trailer inhibition" 2 "driver inhibition" 1 "fault" 0 "undefined" ;
+VAL_ 225 ETAT_AAS_AR 6 "out of service" 5 "waiting" 4 "active" 3 "trailer inhibition" 2 "driver inhibition" 1 "fault" 0 "undefined" ;
+VAL_ 359 APP_URG 1 "Description for the value" 0 "No emergency call" ;
+VAL_ 54 SYNC_ON_OFF_RAD 1 "Synchronization" 0 "No synchronization" ;
+VAL_ 54 UB_ETAT_GMP_HY 1 "Info refreshed" 0 "Info not refreshed" ;
+VAL_ 54 ETAT_GMP_HY 5 "Active in hybrid mode" 4 "Active in propulsion mode" 3 "Active in traction mode" 2 "Active in stop mode" 1 "Inactive" 0 "Undefined" ;
+VAL_ 54 INVIOLABILITE_AUDIO 1 "Active" 0 "Non-Active" ;
+VAL_ 54 PHASE_VIE 7 "Unused" 6 "Unused" 5 "Unused" 4 "COM_OFF" 3 "Alarm/Réveil" 2 "Standby/Mise en veille" 1 "Normal" 0 "Watch/Veille" ;
+VAL_ 54 INTERD_MEMO_DEF 1 "Active" 0 "Non-Active" ;
+VAL_ 54 DIAG_MUX_ON 1 "Active" 0 "Non-Active" ;
+VAL_ 54 DEM_EFFAC_DEF 1 "Active" 0 "Non-Active" ;
+VAL_ 54 ETAT_JN 1 "Night state." 0 "Day state." ;
+VAL_ 543 SOURCE_HDC 1 "Active" 0 "Non-Active" ;
+VAL_ 543 VALID_CDE_RADIO 1 "Active" 0 "Non-Active" ;
+VAL_ 543 SEEK_UP_ET_HDC 1 "Active" 0 "Non-Active" ;
+VAL_ 543 SEEK_DWN_ET_HDC 1 "Active" 0 "Non-Active" ;
+VAL_ 543 OVF_SCAN_UP_ET_HDC 1 "Active" 0 "Non-Active" ;
+VAL_ 543 OVF_SCAN_DWN_ET_HDC 1 "Active" 0 "Non-Active" ;
+VAL_ 543 VOLUME_UP_ET_HDC 1 "Active" 0 "Non-Active" ;
+VAL_ 543 VOLUME_DWN_ET_HDC 1 "Active" 0 "Non-Active" ;
+VAL_ 543 MODE_TELEPH_ET_HDC 1 "Active" 0 "Non-Active" ;
+VAL_ 543 LIST_ET_HDC 1 "Active" 0 "Non-Active" ;
+
